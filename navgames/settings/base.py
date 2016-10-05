@@ -75,10 +75,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+STATIC_ROOT = "/var/www/navgames.org/static"
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'navgames', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 SITE_ID = 1
 
@@ -86,7 +86,7 @@ SITE_ID = 1
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'navgames', 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',

@@ -1,3 +1,4 @@
+.DS_Store
 project.db
 secret_key.txt
 __pycache__
