@@ -1,0 +1,18 @@
+.jumbotron {
+    color: #fff;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.4)), 
+    	url('../images/isteam2016.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: 10px;
+    margin-bottom: 8px; 
+    height: 400px;
+}
+
+.jumbotron h1 {
+    position: absolute;
+    text-align: center;      
+    top: 380px;
+    z-index: 2;
+    font-size: 36px;
+}

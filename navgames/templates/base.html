@@ -6,15 +6,16 @@
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+        <link href="{{ STATIC_URL }}styles/base.css" rel="stylesheet">
+
         {% render_block "css" %}
-        {% addtoblock "css" %}
-            <link href="{{ STATIC_URL }}styles/helpout.css" rel="stylesheet">
-        {% endaddtoblock %}
-    </head>
+
+
+</head>
     <body>
         {% cms_toolbar %}
         <div class="container">
-            <div class="navbar navbar-default" role="navigation">
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
