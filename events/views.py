@@ -4,7 +4,6 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Event
-from .forms import EventForm
 
 
 class EventList(generic.ListView):
@@ -19,7 +18,8 @@ class EventList(generic.ListView):
 class EventCreate(CreateView):
     model = Event
     fields = ['name', 'start_date', 'end_date',
-              'location', 'description', 'series']
+              'location', 'description', 'series', 'uses_epunch']
+    success_url = reverse_lazy('index')
 
 
 class EventUpdate(UpdateView):

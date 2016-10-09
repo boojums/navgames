@@ -11,4 +11,4 @@ class EventForm(ModelForm):
                   'location', 'description', 'series']
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'pk': self.pk})
+        return reverse('detail', kwargs={'slug': self.slug})

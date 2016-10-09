@@ -1,0 +1,12 @@
+- make event dates meaningful/pretty
+- make a few standard templates for the cms part
+- "deploy" to pythonanywhere
+-- fill in cms on pythonanywhere
+- look up oauth2 setup
+- try to deploy to e.g. digitalocean
+
+
+rideboard
+- rest api for ride info (populate events from the events model)
+- spa with React for ride matching
+
