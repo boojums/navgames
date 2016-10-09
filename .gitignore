@@ -4,3 +4,4 @@ secret_key.txt
 __pycache__
 navgames.sublime-workspace
 *.pyc
+navgames/media/*

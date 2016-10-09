@@ -1,6 +1,5 @@
 import os
-gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+
 """
 Django settings for navgames project.
 
@@ -21,10 +20,13 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'obay_project.settings.production'
 
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 
+def gettext(s):
+    return s
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -38,21 +40,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-
-
-
-
 ROOT_URLCONF = 'navgames.urls'
-
-
 
 WSGI_APPLICATION = 'navgames.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-
 
 
 # Internationalization
@@ -135,6 +129,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'cms',
+    'events',
     'menus',
     'sekizai',
     'treebeard',
