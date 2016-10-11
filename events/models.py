@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 
 class Location(models.Model):
@@ -47,3 +48,23 @@ class Event(models.Model):
         else:
             descrip = self.name + ', ' + ' (' + str(self.start_date) + ')'
         return descrip
+
+
+class Club(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    short_name = models.CharField(max_length=10, unique=True)
+
+
+class School(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    short_name = models.CharField(max_length=10, unique=True)
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    club = models.ForeignKey(Club, null=True, blank=True)
+    school = models.ForeignKey(School, null=True, blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+
+    def __str__(self):
+        return self.user.username

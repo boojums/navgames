@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
-app_nanem = 'events'
+app_name = 'events'
 
 urlpatterns = [
     url(r'^$', views.EventList.as_view(), name='event-list'),

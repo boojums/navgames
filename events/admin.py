@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Location, Event, Series
+from .models import Location, Event, Series, UserProfile
 
 
 class EventAdmin(admin.ModelAdmin):
@@ -10,3 +10,4 @@ class EventAdmin(admin.ModelAdmin):
 admin.site.register(Location)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Series)
+admin.site.register(UserProfile)
