@@ -9,9 +9,60 @@
         <link href="{{ STATIC_URL }}styles/feature.css" rel="stylesheet">
     {% endaddtoblock %}
     <div class="jumbotron">
-        {% placeholder "feature" %}
+        <h1>Navigation Games</h1>
+        <div class="feature-text">
+            {% placeholder "feature-text" %}
+        </div>
     </div>
-    <div>
-        {% placeholder "content" %}
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>What we do</h2>
+            {% placeholder "left-top-content" %}
+        </div>
+        <div class="col-sm-4">
+            <h2>Get in touch</h2>
+            {% placeholder "contact" or %}
+                Want to learn more and hear about upcoming events? Connect with us on Facebook, Meetup, or by email.
+            {% endplaceholder %}
+            <div>
+            <a href="https://www.facebook.com/NavigationGames/" target="_blank">
+                <i class="icon-2x icon-facebook-sign"></i>
+            </a>
+            <a href="https://www.meetup.com/NavigationGames/" target="_blank">
+                <i class="icon-2x icon-meetup-sign"></i>
+            </a>
+            <a href="mailto:">
+                <span class="glyphicon glyphicon-envelope" target="_blank"></span>
+            </a>
+            </div>
+            <div>
+                <a href=http://eepurl.com/bkggzX target="_blank">
+                <button class="btn btn-success">Join our mailing list</button>
+                </a>
+            </div>
+        </div>
     </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="img-circle img-responsive img-center" 
+                src="{{ STATIC_URL }}images/maze2.jpg" alt="">
+            {% placeholder "box-1" %}
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle img-responsive img-center" 
+                src="{{ STATIC_URL }}images/girlpunch2.jpg" alt="">
+            {% placeholder "box-2" %}
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle img-responsive img-center" 
+                src="{{ STATIC_URL }}images/huddle2.jpg" alt="">
+            {% placeholder "box-3" %}
+        </div>
+    </div>
+
+    <hr>
 {% endblock content %}
