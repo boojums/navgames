@@ -12,11 +12,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 
 In $VIRTUAL_ENV/bin/postactivate:
-export DJANGO_SETTINGS_MODULE="obay_project.settings.development"
+export DJANGO_SETTINGS_MODULE="navgames.settings.development"
 In $VIRTUAL_ENV/bin/predeactivate
 unset DJANGO_SETTINGS_MODULE
 For production this needs to be set also in the wsgi.py file:
-os.environ['DJANGO_SETTINGS_MODULE'] = 'obay_project.settings.production'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'navgames.settings.production'
 
 """
 
