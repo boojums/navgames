@@ -1,10 +1,24 @@
 - make event dates meaningful/pretty
 - make a few standard templates for the cms part
-- "deploy" to pythonanywhere
+✔ "deploy" to pythonanywhere @done (16-10-12 19:57)
 -- fill in cms on pythonanywhere
 - look up oauth2 setup
 - try to deploy to e.g. digitalocean
-
+​- Test moving the db now and if ok commit to git
+- Basic page templates with breadcrumbs
+✔ No Container in the base template @done (16-10-12 20:40)
+- New maps plugin
+- API key for above
+✔ Link on bottom to login @done (16-10-12 20:35)
+✔ Rename navigationgames.org link on toolbar to Apps @done (16-10-12 20:09) (hacky)
+- Enable history
+- Aldryn-style is different from djangocms-style
+- Manage migrate djangocms-style zero   # unmigrate the other one, also need to remove from installed apps list
+- Bootstrap3 plugin? The aldryn-bootstrap3 sort of goes along with the above (I think). Also some of the bootstrap elements are available inside the text plugin (like icons)
+ 
+- Checkout ckeditor settings to customize editor and also set a “styleset” with predefined styles
+ 
+- How do I make new wizard things for content creation?
 
 rideboard
 - rest api for ride info (populate events from the events model)

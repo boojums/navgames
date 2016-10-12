@@ -188,6 +188,8 @@ CMS_STYLE_NAMES = (
     ('feature-content', 'feature-content')
 )
 
+DJANGOCMS_LINK_USE_SELECT2 = True
+
 # Registration settings
 REGISTRATION_OEPN = True
 ACCOUNT_ACTIVATION_DAYS = 7
