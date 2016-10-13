@@ -1,3 +1,12 @@
+​- Show “logged in as” at the bottom when logged in
+- Set up user permissions for typical use cases
+- Uh, tests for those…
+- Creation wizard for events, try setting editonsuccess = False
+- cookie thing
+- run manage.py check and cms check
+- keep good notes to provide a tutorial for orienteering clubs to create a site
+- remove Djangocms-snippet
+- use CMS_PLACEHOLDER_CONF to designate which plugins can into which placeholders?
 - make event dates meaningful/pretty
 - pull request for some doc updates (admin_reverse? )
 - make a few standard templates for the cms part
@@ -21,7 +30,16 @@
  
 - How do I make new wizard things for content creation?
 
+Event plugins:
+-          next event
+-          next n events?
+-          Next n events for a series?
+
 rideboard
 - rest api for ride info (populate events from the events model)
-- spa with React for ride matching
-
+- spa with React for ride matching      
+ 
+Future
+-          https support, free cert from let’s encrypt?
+-          Sitemaps and other SEO relevant things
+-          Make Oevents a separate app with all the niceties for a djangocms-oevents repo/app
