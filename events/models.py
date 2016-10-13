@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from cms.models import CMSPlugin
 
 
 class Location(models.Model):
@@ -68,3 +69,10 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class EventPluginModel(CMSPlugin):
+    event = models.ForeignKey(Event)
+
+    def __str__(self):
+        return self.event.name

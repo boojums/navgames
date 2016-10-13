@@ -1,4 +1,5 @@
 - make event dates meaningful/pretty
+- pull request for some doc updates (admin_reverse? )
 - make a few standard templates for the cms part
 ✔ "deploy" to pythonanywhere @done (16-10-12 19:57)
 -- fill in cms on pythonanywhere
