@@ -3,11 +3,23 @@
 <div class="container">
     <h2> Upcoming events!</h2>
     {% if latest_events_list  %}
-        <ul>
-        {% for event in latest_events_list %}
-            <li><a href="{% url 'events:event-detail' event.slug %}">{{ event.location }}</a></li>
-        {% endfor %}
-        </ul>
+        <div class="table-responsive table-striped">
+        <table class="table">
+            <thead>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Location</th>
+            </thead>
+            <tbody>
+            {% for event in latest_events_list %}
+                <tr><td> day month year</td>
+                    <td>{{ event.name }}</td>
+                    <td><a href="{% url 'events:event-detail' event.slug %}">{{ event.location }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
     {% else %}
         <p> Whoops, no events!</p>
     {% endif %}

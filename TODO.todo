@@ -1,11 +1,12 @@
 ​- Show “logged in as” at the bottom when logged in
+- update requirements
 - Set up user permissions for typical use cases
 - Uh, tests for those…
 - Creation wizard for events, try setting editonsuccess = False
 - cookie thing
-- run manage.py check and cms check
+- fix the warnings from manage.py check and cms check
 - keep good notes to provide a tutorial for orienteering clubs to create a site
-- remove Djangocms-snippet
+✔ remove Djangocms-snippet @done (16-10-13 23:03)
 - use CMS_PLACEHOLDER_CONF to designate which plugins can into which placeholders?
 - make event dates meaningful/pretty
 - pull request for some doc updates (admin_reverse? )

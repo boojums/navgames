@@ -1,9 +1,11 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.utils import timezone
 from cms.models import CMSPlugin
 
 
+# TODO: flesh out. Street address and/or coordinates?
 class Location(models.Model):
     ''' A location for an event.'''
     name = models.CharField(max_length=100)
@@ -14,6 +16,7 @@ class Location(models.Model):
         return self.name + ', ' + self.city
 
 
+# TODO: active? Date range? more info?
 class Series(models.Model):
     name = models.CharField(max_length=100)
 
@@ -33,7 +36,16 @@ class Event(models.Model):
     description = models.TextField()
     uses_epunch = models.BooleanField()
     series = models.ForeignKey(Series, null=True, blank=True)
+    public = models.BooleanField()
     slug = models.SlugField(unique=True)
+
+    def is_future(self):
+        now = timezone.now()
+        return self.start_date > now
+
+    def is_past(self):
+        now = timezone.now()
+        return self.start_date < now
 
     def save(self, *args, **kwargs):
         if not self.name:
@@ -61,6 +73,7 @@ class School(models.Model):
     short_name = models.CharField(max_length=10, unique=True)
 
 
+# TODO: I don't think this belongs here
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     club = models.ForeignKey(Club, null=True, blank=True)

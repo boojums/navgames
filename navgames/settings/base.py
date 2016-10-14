@@ -149,6 +149,7 @@ INSTALLED_APPS = [
     'djangocms_inherit',
     'djangocms_link',
     'reversion',
+    'aldryn_reversion',
     'navgames'
 ]
 
@@ -177,6 +178,9 @@ CMS_TEMPLATES = (
     ('page.html', 'Page'),
     ('feature.html', 'Page with Feature')
 )
+
+CMS_MAX_PAGE_HISTORY_REVERSIONS = 15
+CMS_MAX_PAGE_PUBLISH_REVERSIONS = 10
 
 CMS_PERMISSION = True
 
