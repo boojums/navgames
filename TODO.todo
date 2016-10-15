@@ -1,31 +1,36 @@
-​- Show “logged in as” at the bottom when logged in
-- update requirements
+​- different faq app?
+- how the hell does aldryn-boilterplate work?
+- customize newsblog??
+- change page with feature to 'front page'
+- default text/styles, etc in a placeholder block? Extending page?
+- install newsblog
+- Show “logged in as” at the bottom when logged in
+✔ update requirements @done (16-10-14 18:40)
 - Set up user permissions for typical use cases
 - Uh, tests for those…
 - Creation wizard for events, try setting editonsuccess = False
 - cookie thing
+- clean up templates -- separate menu template, base should be almost empty
 - fix the warnings from manage.py check and cms check
 - keep good notes to provide a tutorial for orienteering clubs to create a site
+ - or really, set up separate sites served off of the same project!
 ✔ remove Djangocms-snippet @done (16-10-13 23:03)
 - use CMS_PLACEHOLDER_CONF to designate which plugins can into which placeholders?
 - make event dates meaningful/pretty
 - pull request for some doc updates (admin_reverse? )
 - make a few standard templates for the cms part
 ✔ "deploy" to pythonanywhere @done (16-10-12 19:57)
--- fill in cms on pythonanywhere
-- look up oauth2 setup
-- try to deploy to e.g. digitalocean
-​- Test moving the db now and if ok commit to git
+✔ Test moving the db now and if ok commit to git @done (16-10-14 18:59)
 - Basic page templates with breadcrumbs
 ✔ No Container in the base template @done (16-10-12 20:40)
-- New maps plugin
-- API key for above
+✔ New maps plugin @done (16-10-14 18:59)
+✔ API key for above @done (16-10-14 18:59)
 ✔ Link on bottom to login @done (16-10-12 20:35)
 ✔ Rename navigationgames.org link on toolbar to Apps @done (16-10-12 20:09) (hacky)
 - Enable history
-- Aldryn-style is different from djangocms-style
-- Manage migrate djangocms-style zero   # unmigrate the other one, also need to remove from installed apps list
-- Bootstrap3 plugin? The aldryn-bootstrap3 sort of goes along with the above (I think). Also some of the bootstrap elements are available inside the text plugin (like icons)
+✔ Aldryn-style is different from djangocms-style @done (16-10-14 18:36)
+✔ Manage migrate djangocms-style zero   # unmigrate the other one, also need to remove from installed apps list @done (16-10-14 18:36)
+✔ Bootstrap3 plugin? The aldryn-bootstrap3 sort of goes along with the above (I think). Also some of the bootstrap elements are available inside the text plugin (like icons) @done (16-10-14 18:38)
  
 - Checkout ckeditor settings to customize editor and also set a “styleset” with predefined styles
  
@@ -35,12 +40,16 @@ Event plugins:
 -          next event
 -          next n events?
 -          Next n events for a series?
+frontend_edit_template?
 
 rideboard
 - rest api for ride info (populate events from the events model)
 - spa with React for ride matching      
  
 Future
+- use aldryn-boilerplates to have easy different boilerplates for different clubs
+- look up oauth2 setup
+- try to deploy to e.g. digitalocean
 -          https support, free cert from let’s encrypt?
 -          Sitemaps and other SEO relevant things
 -          Make Oevents a separate app with all the niceties for a djangocms-oevents repo/app

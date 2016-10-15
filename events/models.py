@@ -63,6 +63,22 @@ class Event(models.Model):
         return descrip
 
 
+class EventPluginModel(CMSPlugin):
+    event = models.ForeignKey(Event)
+
+    def __str__(self):
+        return self.event.name
+
+
+class EventListPluginModel(CMSPlugin):
+    n_events = models.IntegerField()
+
+    def __str__(self):
+        return 'Next ' + str(self.n_events) + ' events.'
+
+
+# TODO: I don't think these belongs here --
+# not sure, part of a registration app?
 class Club(models.Model):
     name = models.CharField(max_length=100, unique=True)
     short_name = models.CharField(max_length=10, unique=True)
@@ -73,7 +89,6 @@ class School(models.Model):
     short_name = models.CharField(max_length=10, unique=True)
 
 
-# TODO: I don't think this belongs here
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     club = models.ForeignKey(Club, null=True, blank=True)
@@ -82,10 +97,3 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-class EventPluginModel(CMSPlugin):
-    event = models.ForeignKey(Event)
-
-    def __str__(self):
-        return self.event.name

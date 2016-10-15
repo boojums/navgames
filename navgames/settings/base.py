@@ -18,6 +18,7 @@ unset DJANGO_SETTINGS_MODULE
 For production this needs to be set also in the wsgi.py file:
 os.environ['DJANGO_SETTINGS_MODULE'] = 'navgames.settings.production'
 
+Also set API keys as environ variables.
 """
 
 
@@ -93,10 +94,12 @@ TEMPLATES = [
                 'django.core.context_processors.tz',
                 'sekizai.context_processors.sekizai',
                 'django.core.context_processors.static',
-                'cms.context_processors.cms_settings'
+                'cms.context_processors.cms_settings',
+                'aldryn_boilerplates.context_processors.boilerplate',
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
+                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',               
                 'django.template.loaders.app_directories.Loader',
                 'django.template.loaders.eggs.Loader'
             ],
@@ -135,27 +138,52 @@ INSTALLED_APPS = [
     'sekizai',
     'treebeard',
     'djangocms_text_ckeditor',
-    'djangocms_style',
+    'aldryn_style',
     'djangocms_column',
     'filer',
+    'aldryn_bootstrap3',
     'easy_thumbnails',
+    'aldryn_apphooks_config',
+    'aldryn_categories',
+    'aldryn_common',
+    'aldryn_newsblog',
+    'aldryn_people',
     'cmsplugin_filer_image',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
-    'djangocms_googlemap',
+    'djangocms_maps',
     'djangocms_inherit',
     'djangocms_link',
     'reversion',
     'aldryn_reversion',
+    'adminsortable2',
+    'aldryn_boilerplates',
+    'aldryn_translation_tools',
+    'parler',
+    'sortedm2m',
+    'aldryn_faq',
+    'taggit',
     'navgames'
 ]
 
 LANGUAGES = (
     ('en', gettext('en')),
 )
+
+PARLER_LANGUESG = {
+    1: (
+        {'code': 'en'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_unstranslated': False,
+    }
+}
+
+ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 
 CMS_LANGUAGES = {
     1: [
@@ -220,5 +248,13 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters'
+    'easy_thumbnails.processors.filters',
+    'easy_thumbnails.processors.background'
 )
+
+# djangcms-maps settings
+MAPS_PROVIDERS = [
+    ('googlemaps', gettext('Google Maps (API key required)')),
+]
+
+MAPS_GOOGLEMAPS_API_KEY = os.environ.get('GOOGLEMAPS_API_KEY')
