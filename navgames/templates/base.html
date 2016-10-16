@@ -33,12 +33,41 @@
                     </ul>
                 </div>
             </div>
-                
+
+            {# DOCS: http://getbootstrap.com/components/#breadcrumbs #}
+            {% block breadcrumb %}
+                {% if not request.current_page.is_home %}
+                    <nav class="navbar navbar-breadcrumb" role="navigation">
+                        <h3 class="sr-only">You are here</h3>
+                        <div class="container top-buffer">
+                            <ol class="breadcrumb">
+                                {% block extend_breadcrumb %}
+                                    {% show_breadcrumb 0 "includes/breadcrumb.html" %}
+                                {% endblock extend_breadcrumb %}
+                            </ol>
+                        </div>
+                    </nav>
+                {% endif %}
+            {% endblock breadcrumb %}
+
+
             <div>
                 {% block content %}{% endblock content %}
             </div>
             <div>
-                {% block footer %}{% endblock footer %}
+                {% block footer %}
+                    <div class="container">
+                    <hr>
+                        <footer>
+                            {% if user.is_authenticated %}
+                                <p>Logged in as {{ user.username }}. | <a href="/accounts/logout">Logout</a></p>
+                            {% else %}
+                                <p><a href="/?edit">Login</a></p>
+                            {% endif %}
+                            <p>© Navigation Games</p>
+                        </footer>
+                    </div>
+                {% endblock footer %}
             </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>

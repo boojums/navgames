@@ -99,7 +99,7 @@ TEMPLATES = [
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
-                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',               
+                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
                 'django.template.loaders.app_directories.Loader',
                 'django.template.loaders.eggs.Loader'
             ],
@@ -183,7 +183,7 @@ PARLER_LANGUESG = {
     }
 }
 
-ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
+ALDRYN_BOILERPLATE_NAME = 'legacy'
 
 CMS_LANGUAGES = {
     1: [
@@ -204,7 +204,7 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ('page.html', 'Page'),
-    ('feature.html', 'Page with Feature')
+    ('front_page.html', 'Front page')
 )
 
 CMS_MAX_PAGE_HISTORY_REVERSIONS = 15

@@ -4,15 +4,7 @@
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
-    {% placeholder "content" %}
-{% endblock content %}
-    
-{% block footer %}
     <div class="container">
-    <hr>
-        <footer>
-            <p><a href="/?edit">Login</a></p>
-            <p>© Navigation Games</p>
-        </footer>
+        {% placeholder "content" %}
     </div>
-{% endblock footer %}
+{% endblock content %}
