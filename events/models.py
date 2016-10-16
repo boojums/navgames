@@ -3,6 +3,7 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from django.utils import timezone
 from cms.models import CMSPlugin
+from cms.models.fields import PlaceholderField
 
 
 # TODO: flesh out. Street address and/or coordinates?
@@ -11,6 +12,13 @@ class Location(models.Model):
     name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     maplink = models.URLField(blank=True)
+    description = models.TextField(blank=True)
+    map_placeholder = PlaceholderField('map')
+    slug = models.SlugField(unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Location, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name + ', ' + self.city
@@ -19,9 +27,15 @@ class Location(models.Model):
 # TODO: active? Date range? more info?
 class Series(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    slug = models.SlugField(unique=True)
 
     class Meta:
         verbose_name_plural = 'Series'
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Series, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -39,11 +53,13 @@ class Event(models.Model):
     public = models.BooleanField()
     slug = models.SlugField(unique=True)
 
-    def is_future(self):
+    @property
+    def future(self):
         now = timezone.now()
         return self.start_date > now
 
-    def is_past(self):
+    @property
+    def past(self):
         now = timezone.now()
         return self.start_date < now
 

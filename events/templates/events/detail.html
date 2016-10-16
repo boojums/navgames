@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
+{% load cms_tags %}
 
 {% block title %}{% endblock %}
 
 {% block content %}
-
-<h1>{{ event.name }}</h1>
-<h3>{{ event.location }} - {{ event.date }}</h3>
-<p>{{ event.description }}
-
+<div class="container">
+    <h1>{{ event.name }}</h1>
+    <h3>{{ event.location }} - {{ event.start_date|date }}</h3>
+    <p>{{ event.description }}
+    
+    <div class="row">
+        <div class="col-md-6">
+            {% render_placeholder event.location.map_placeholder %}
+        </div>
+    </div>
 {% endblock content %}

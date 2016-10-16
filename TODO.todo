@@ -2,9 +2,14 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
+- test for events
+- make event_list table an include and include in both the app and the plugin templates
+- refactor/cleanup all template names in events
+- customize newsblog a bit
+✔ link to event site from event name in table @done (16-10-16 23:18)
+✔ make it so I can use placeholders in the location-list, etc. @done (16-10-16 23:01)
 ✔ Basic page templates with breadcrumbs @done (16-10-16 11:08)
 ​- different faq app? styles for faq sections instead? or just write a plugin real fast like 
-- customize newsblog??
 ✔ change page with feature to 'front page' @done (16-10-16 10:55)
 - default text/styles, etc in a placeholder block? Extending page?
 ✔ install newsblog @done (16-10-15 21:16)
@@ -15,8 +20,8 @@
 ✔ clean up templates -- separate menu template, base should be almost empty @done (16-10-16 11:10)
 - fix the warnings from manage.py check and cms check
 ✔ remove Djangocms-snippet @done (16-10-13 23:03)
-- use CMS_PLACEHOLDER_CONF to designate which plugins can into which placeholders?
-- make event dates meaningful/pretty
+✔ use CMS_PLACEHOLDER_CONF to designate which plugins can into which placeholders? @done (16-10-16 23:01)
+✔ make event dates meaningful/pretty @done (16-10-16 12:40)
 - pull request for some doc updates (admin_reverse? )
 - make a few standard templates for the cms part
 ✔ "deploy" to pythonanywhere @done (16-10-12 19:57)

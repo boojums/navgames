@@ -12,7 +12,7 @@
             </thead>
             <tbody>
             {% for event in latest_events_list %}
-                <tr><td> day month year</td>
+                <tr><td>{{ event.start_date|date }}</td>
                     <td>{{ event.name }}</td>
                     <td><a href="{% url 'events:event-detail' event.slug %}">{{ event.location }}</a></td>
                 </tr>

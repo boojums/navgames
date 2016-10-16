@@ -1,0 +1,29 @@
+{% if latest_events_list  %}
+    <div class=>
+    <table class="table table-responsive table-striped">
+        <thead>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Location</th>
+            <th class="hidden-xs">E-punch</th>
+            <th class="hidden-xs">Public</th>
+        </thead>
+        <tbody>
+        {% for event in latest_events_list %}
+            <tr><td>{{ event.start_date|date }}</td>
+                <td><a href="{% url 'events:event-detail' event.slug %}">{{ event.name }}</td>
+                <td><a href="{% url 'events:location-detail' event.location.slug %}">{{ event.location }}</a></td>
+                <td class="hidden-xs">{% if event.uses_epunch %}Yes!
+                    {% else %}No
+                    {% endif %}</td>
+                <td class="hidden-xs">{% if event.public %}Yes!
+                    {% else %}No
+                    {% endif %}</td>                    
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% else %}
+    <p> Whoops, no events!</p>
+{% endif %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load cms_tags staticfiles sekizai_tags %}
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>{{ location.name }}</h1>
+    <h3>{{ location.city }}</h3>
+    <div class="row">
+        <div class="col-md-6">
+            {% render_model location "description" %}
+        </div>
+        <div class="col-md-6">
+            {% render_placeholder location.map_placeholder %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load cms_tags staticfiles sekizai_tags %}
+{% block content %}
+<div class="container">
+    <h2> Locations</h2>
+    {% if location_list  %}
+            {% for location in location_list %}
+                <panel class="panel panel-default">
+                    <div class="panel-heading">{{ location.name }} - {{ location.city }}</div>
+                    <div class="panel-body">
+                    {{ location.description }}
+                    </div>
+                </panel>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    {% else %}
+        <p> Whoops, no locations!</p>
+    {% endif %}
+</div>
+{% endblock content %}

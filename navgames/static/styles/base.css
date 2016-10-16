@@ -4,5 +4,9 @@ body {
 }
 
 .top-buffer { 
-    margin-top:20px; }
+    margin-top:20px; 
+}
+
+.cms-toolbar-expanded body .navbar-fixed-top {
+    top:45px;
 }

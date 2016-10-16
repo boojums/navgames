@@ -212,7 +212,11 @@ CMS_MAX_PAGE_PUBLISH_REVERSIONS = 10
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
+CMS_PLACEHOLDER_CONF = {
+    'map': {
+        'plugins': ['MapsPlugin']
+    }
+}
 
 
 CMS_STYLE_NAMES = (

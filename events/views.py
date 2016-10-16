@@ -3,11 +3,24 @@ from django.views import generic
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from .models import Event
+from .models import Event, Location, Series
+
+
+class LocationList(generic.ListView):
+    template_name = 'events/location_list.html'
+    context_object_name = 'location_list'
+
+    def get_queryset(self):
+        return Location.objects.all()
+
+
+class LocationDetail(generic.DetailView):
+    model = Location
+    fields = ['name', 'city', 'description']
 
 
 class EventList(generic.ListView):
-    template_name = 'events/index.html'
+    template_name = 'events/event_list.html'
     context_object_name = 'latest_events_list'
 
     def get_queryset(self):
