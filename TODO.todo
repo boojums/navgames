@@ -26,7 +26,7 @@
 - Set up user permissions for typical use cases
 - Creation wizard for events, try setting editonsuccess = False
 ✔ clean up templates -- separate menu template, base should be almost empty @done (16-10-16 11:10)
-- fix the warnings from manage.py check and cms check
+✔ fix the warnings from manage.py check and cms check @done (16-10-17 23:16)
 ✔ remove Djangocms-snippet @done (16-10-13 23:03)
 ✔ use CMS_PLACEHOLDER_CONF to designate which plugins can into which placeholders? @done (16-10-16 23:01)
 ✔ make event dates meaningful/pretty @done (16-10-16 12:40)
