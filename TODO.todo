@@ -6,6 +6,10 @@
 - make event_list table an include and include in both the app and the plugin templates
 - refactor/cleanup all template names in events
 - customize newsblog a bit
+- buttons on front page
+- series description and pages
+- embed mailchimp mailing list subscribe form?
+- Help page viewable for admins when logged in
 ✔ link to event site from event name in table @done (16-10-16 23:18)
 ✔ make it so I can use placeholders in the location-list, etc. @done (16-10-16 23:01)
 ✔ Basic page templates with breadcrumbs @done (16-10-16 11:08)

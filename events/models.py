@@ -87,7 +87,15 @@ class EventPluginModel(CMSPlugin):
 
 
 class EventListPluginModel(CMSPlugin):
-    n_events = models.IntegerField()
+    n_events = models.IntegerField(default=5)
+    only_public = models.BooleanField(default=True)
+    only_future = models.BooleanField(default=True)
+    only_past = models.BooleanField(default=False)
+    start_date = models.DateField(null=True, blank=True,
+                                  help_text='Only use this instead of future '
+                                  'or past if you want a static date range')
+    end_date = models.DateField(null=True, blank=True)
+    series = models.ManyToManyField(Series, blank=True)
 
     def __str__(self):
         return 'Next ' + str(self.n_events) + ' events.'

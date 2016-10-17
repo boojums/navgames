@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.utils import timezone
 
 from .models import Event, Location, Series
 
@@ -25,7 +25,7 @@ class EventList(generic.ListView):
 
     def get_queryset(self):
         ''' Return the last five events '''
-        return Event.objects.order_by('-start_date')[:5]
+        return Event.objects.filter(start_date__gte=timezone.now()).order_by('start_date')
 
 
 class EventCreate(CreateView):
