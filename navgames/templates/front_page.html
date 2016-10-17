@@ -90,16 +90,16 @@
     <div class="container">
     <hr>
         <div class="row">
-            {% placeholder "events-header" or %}
-                <h2>Upcoming Events!</h2>
-            {% endplaceholder %}
-        <div class="row">
             <div class="col-sm-8">
-                {% placeholder "upcoming-events" %}            
+                {% placeholder "events-header" or %}
+                    <h2>Upcoming Events!</h2>
+                {% endplaceholder %}
+                {% placeholder "events-list" %}            
             </div>
             <div class="col-sm-4">
                 {% placeholder "events-explainer" %}
             </div>
+        </div>
     </div>
 
 {% endblock content %}

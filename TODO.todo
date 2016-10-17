@@ -3,10 +3,12 @@
   ☐ history for cms pages?
 
 - test for events
-- make event_list table an include and include in both the app and the plugin templates
+✔ make event_list table an include and include in both the app and the plugin templates @done (16-10-17 22:32)
 - refactor/cleanup all template names in events
 - customize newsblog a bit
-- buttons on front page
+- search on blog
+- look at aldryn search and django haystack
+✔ buttons on front page @done (16-10-17 22:32)
 - series description and pages
 - embed mailchimp mailing list subscribe form?
 - Help page viewable for admins when logged in
@@ -48,8 +50,8 @@
  - or really, set up separate sites served off of the same project!
 
 Event plugins:
--          events list (with n previous and/or n past events) for x series
--          single event
+✔          events list (with n previous and/or n past events) for x series @done (16-10-17 22:32)
+✔          single event @done (16-10-17 22:32)
 frontend_edit_template?
 
 rideboard

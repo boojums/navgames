@@ -87,18 +87,18 @@ class EventPluginModel(CMSPlugin):
 
 
 class EventListPluginModel(CMSPlugin):
-    n_events = models.IntegerField(default=5)
+    num_events = models.IntegerField(default=5)
     only_public = models.BooleanField(default=True)
-    only_future = models.BooleanField(default=True)
-    only_past = models.BooleanField(default=False)
-    start_date = models.DateField(null=True, blank=True,
-                                  help_text='Only use this instead of future '
-                                  'or past if you want a static date range')
-    end_date = models.DateField(null=True, blank=True)
-    series = models.ManyToManyField(Series, blank=True)
+    past_events = models.BooleanField(default=False)
 
     def __str__(self):
-        return 'Next ' + str(self.n_events) + ' events.'
+        if self.past_events:
+            descrip = 'Last '
+        else:
+            descrip = 'Next '
+        if self.only_public:
+            descrip += ' public '
+        return descrip + str(self.num_events) + ' events.'
 
 
 # TODO: I don't think these belongs here --

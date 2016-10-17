@@ -25,12 +25,8 @@ class EventListPluginPublisher(CMSPluginBase):
     render_template = "events/plugins/event_list.html"
 
     def render(self, context, instance, placeholder):
-        events = Event.objects.filter(start_date__gte=timezone.now()).order_by('start_date')[:instance.n_events]
+        events = Event.objects.filter(start_date__gte=timezone.now()) \
+                    .order_by('start_date')[:instance.num_events]
         context.update({'instance': instance,
                         'latest_events_list': events})
         return context
-
-# TODO: series publisher?
-
-#plugin_pool.register_plugin(EventPluginPublisher)  # register the plugin
-#plugin_pool.register_plugin(EventListPluginPublisher)  # register the plugin

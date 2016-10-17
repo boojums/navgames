@@ -226,6 +226,9 @@ CMS_STYLE_NAMES = (
 
 DJANGOCMS_LINK_USE_SELECT2 = True
 
+# Save text of blog entries, not just intro
+ALDRYN_NEWSBLOG_UPDATE_SEARCH_DATA_ON_SAVE = True
+
 # Registration settings
 REGISTRATION_OEPN = True
 ACCOUNT_ACTIVATION_DAYS = 7
