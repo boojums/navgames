@@ -2,6 +2,8 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
+- why copy_relations?
+- fork djangocms-maps, PR for open orienteering map (if api) or something else
 - test for events
 ✔ make event_list table an include and include in both the app and the plugin templates @done (16-10-17 22:32)
 - refactor/cleanup all template names in events
