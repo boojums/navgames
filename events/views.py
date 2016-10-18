@@ -21,11 +21,12 @@ class LocationDetail(generic.DetailView):
 
 class EventList(generic.ListView):
     template_name = 'events/event_list.html'
-    context_object_name = 'latest_events_list'
+    context_object_name = 'event_list'
 
     def get_queryset(self):
-        ''' Return the last five events '''
-        return Event.objects.filter(start_date__gte=timezone.now()).order_by('start_date')
+        ''' Return all upcoming events '''
+        return Event.objects.filter(start_date__gte=timezone.now()) \
+                            .order_by('start_date')
 
 
 class EventCreate(CreateView):

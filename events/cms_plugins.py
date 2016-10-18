@@ -21,12 +21,24 @@ class EventPluginPublisher(CMSPluginBase):
 class EventListPluginPublisher(CMSPluginBase):
     model = EventListPluginModel  # model where plugin data are saved
     module = _("Events")
-    name = _("Events List")  # name of the plugin in the interface
+    name = _("Event List")  # name of the plugin in the interface
     render_template = "events/plugins/event_list.html"
 
     def render(self, context, instance, placeholder):
-        events = Event.objects.filter(start_date__gte=timezone.now()) \
-                    .order_by('start_date')[:instance.num_events]
+        if instance.past_events and instance.future_events:
+            events = Event.objects.all()
+        elif instance.past_events:
+            events = Event.past_events.all()
+        else:
+            events = Event.future_events.all()
+
+        if instance.only_public:
+            events = events.filter(public=True)
+
+        if instance.series:
+            events = events.filter(series=instance.series)
+
+        event_list = events.order_by('start_date')[:instance.num_events]
         context.update({'instance': instance,
-                        'latest_events_list': events})
+                        'event_list': event_list})
         return context

@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class EventsApphook(CMSApp):
     app_name = "events"
-    name = _("Events Application")
+    name = _("Events")
 
     def get_urls(self, page=None, language=None, **kwargs):
         return ["events.urls"]

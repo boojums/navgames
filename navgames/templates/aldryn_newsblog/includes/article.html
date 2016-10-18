@@ -5,13 +5,17 @@
     {% if not article.published %} unpublished{% endif %}">
 
     {# The image is only shown on the detail view by using the condition "and detail_view" #}
-    {% if article.featured_image_id and detail_view %}
-        <p>
-            <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
-        </p>
+    {% if article.featured_image_id %}
+        {% if detail_view %}
+            <p>
+                <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+            </p>
+        {% else %}
+            <img src="{% thumbnail article.featured_image 200x114 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}" class="article-list-thumbnail">
+        {% endif %}
     {% endif %}
 
-    {% if article.categories.exists %}
+    {% if article.categories.exists and detail_view %}
         <p>
             {% for category in article.categories.all %}
                 <a href="{% namespace_url 'article-list-by-category' category.slug namespace=namespace default='' %}">{{ category.name }}</a>
@@ -20,17 +24,25 @@
         </p>
     {% endif %}
 
+    {% if not detail_view %} 
+        <span class="article-small-date">{{ article.publishing_date|date }}<span>
+    {% endif %}
+
     <h2>
         {% if not detail_view %}
-            <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article "title" %}</a>
+            <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}" class="article-title">{% render_model article "title" %}</a>
         {% else %}
             {% render_model article "title" %}
         {% endif %}
     </h2>
 
-    <p>{{ article.publishing_date|date }}</p>
+    {% if detail_view %} 
+        <p>{{ article.publishing_date|date }}</p>
+    {% endif %}
 
-    {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
+    {% if detail_view %}
+        {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
+    {% endif %}
 
     {% if article.tags %}
         <p>
@@ -44,7 +56,10 @@
 
     {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
-    {% endif %}
-
+    {% else %}
+        <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">
+            Read more
+            </a>
+        {% endif %}
     <hr>
 </article>

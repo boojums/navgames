@@ -160,6 +160,7 @@ INSTALLED_APPS = [
     'djangocms_inherit',
     'djangocms_link',
     'reversion',
+    'rssplugin',
     'aldryn_reversion',
     'adminsortable2',
     'aldryn_boilerplates',

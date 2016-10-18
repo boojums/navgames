@@ -10,3 +10,19 @@ body {
 .cms-toolbar-expanded body .navbar-fixed-top {
     top:45px;
 }
+
+.article-list-thumbnail {
+    float:left;
+    padding-right:30px;
+}
+
+.article-small-date {
+    padding:0;
+    outline:0;
+    margin:0; 
+}
+
+.article-title {
+    padding:0;
+    margin:0; 
+}

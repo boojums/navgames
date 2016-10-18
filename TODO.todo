@@ -2,6 +2,24 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
+​- Render_model can be used to edit lots of fields (duh), so it makes sense to have a double-click to edit on various parts 
+- Lorem ipsum generator
+- Possible to rename to apps menu in cms_toolbars.py:  get_or_create_menu(ADMIN_MENU_IDENTIFIER, _(‘Apps’))
+- Can have all kinds of relevant links in the menu related to the current page, like an event at a series or location, for example
+- Make sure I’m using select2 (Django-select2) : in admin: form = select2_modelform(model, attrs=[{‘width’: 250}])
+- Need a styled banner for page titles, I think,
+- And maybe a more colorful/playful menu
+ 
+- This is a good blog page; I think: http://www.goodsports.org/news/
+- full –width header/title? Full-width footer?
+- Nice menu example from martin: https://www.youtube.com/watch?v=Dj8dhgmzlFM&index=1&list=PLbNxojMo86v42AOM47uhaEFHIJFUM4d6M
+- Make navbar better – reveal children on hover, maybe no arrow, place flush over image, have some color
+ 
+- generate rss feed? django-cms-feed-generator? or built-in django
+- neoc schedule from rss feed -- adapt django-rss to new migrate system? pull request?
+- make prettier template for rss feed
+
+- Check out the thumbnail app
 - why copy_relations?
 - fork djangocms-maps, PR for open orienteering map (if api) or something else
 - test for events
@@ -67,3 +85,5 @@ Future
 -          https support, free cert from let’s encrypt?
 -          Sitemaps and other SEO relevant things
 -          Make Oevents a separate app with all the niceties for a djangocms-oevents repo/app
+- Py-react and Django-pipeline
+  https://facebook.github.io/react/blog/2013/08/19/use-react-and-jsx-in-python-applications.html

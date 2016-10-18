@@ -1,4 +1,4 @@
-{% if latest_events_list  %}
+{% if event_list  %}
     <div class=>
     <table class="table table-responsive table-striped">
         <thead>
@@ -9,7 +9,7 @@
             <th class="hidden-xs">Public</th>
         </thead>
         <tbody>
-        {% for event in latest_events_list %}
+        {% for event in event_list %}
             <tr><td>{{ event.start_date|date }}</td>
                 <td><a href="{% url 'events:event-detail' event.slug %}">{{ event.name }}</td>
                 <td><a href="{% url 'events:location-detail' event.location.slug %}">{{ event.location }}</a></td>

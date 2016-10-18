@@ -41,6 +41,18 @@ class Series(models.Model):
         return self.name
 
 
+class PastEvents(models.Manager):
+    def get_queryset(self):
+        return super(PastEvents, self).get_queryset() \
+                .filter(start_date__lte=timezone.now())
+
+
+class FutureEvents(models.Manager):
+    def get_queryset(self):
+        return super(FutureEvents, self).get_queryset() \
+                .filter(start_date__gte=timezone.now())
+
+
 class Event(models.Model):
     ''' Event information, including times and description.'''
     name = models.CharField(max_length=100, blank=True)
@@ -52,6 +64,10 @@ class Event(models.Model):
     series = models.ForeignKey(Series, null=True, blank=True)
     public = models.BooleanField()
     slug = models.SlugField(unique=True)
+
+    objects = models.Manager()
+    past_events = PastEvents()
+    future_events = FutureEvents()
 
     @property
     def future(self):
@@ -90,6 +106,8 @@ class EventListPluginModel(CMSPlugin):
     num_events = models.IntegerField(default=5)
     only_public = models.BooleanField(default=True)
     past_events = models.BooleanField(default=False)
+    future_events = models.BooleanField(default=True)
+    series = models.ForeignKey(Series, null=True, blank=True)
 
     def __str__(self):
         if self.past_events:
