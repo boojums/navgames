@@ -8,6 +8,7 @@
         <link rel="icon" href="/static/favicon.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
         <link href="{{ STATIC_URL }}styles/base.css" rel="stylesheet">
         <link href="{{ STATIC_URL }}styles/socialicious.css" rel="stylesheet">
 
@@ -39,17 +40,7 @@
             </div>
             <div>
                 {% block footer %}
-                    <div class="container">
-                    <hr>
-                        <footer>
-                            {% if user.is_authenticated %}
-                                <p>Logged in as {{ user.username }}. | <a href="/accounts/logout">Logout</a></p>
-                            {% else %}
-                                <p><a href="/?edit">Login</a></p>
-                            {% endif %}
-                            <p>© Navigation Games</p>
-                        </footer>
-                    </div>
+                    {% include "includes/footer.html" %}
                 {% endblock footer %}
             </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

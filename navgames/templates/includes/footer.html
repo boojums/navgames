@@ -1,0 +1,16 @@
+<hr>
+<div class="footer-basic">
+    <footer>
+        <div class="social">
+            <a href="#">
+                <i class="icon ion-social-facebook"></i>
+            </a>
+
+        {% if user.is_authenticated %}
+            <p>Logged in as {{ user.username }}. | <a href="/accounts/logout">Logout</a></p>
+        {% else %}
+            <p><a href="/?edit">Login</a></p>
+        {% endif %}
+        <p>© Navigation Games</p>
+    </footer>
+</div>

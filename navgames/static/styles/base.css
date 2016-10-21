@@ -26,3 +26,11 @@ body {
     padding:0;
     margin:0; 
 }
+
+article h2 {
+    margin-top:0;
+}
+
+h1, h2, .navbar-brand {
+    font-family: 'Patua One', cursive;
+}

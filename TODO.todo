@@ -2,8 +2,25 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
+- make image full width, not as high
+- make Navigation games much bigger
+- make learn more a bit wider
+- put get in touch in a box/well w/ background eeeeee or f8f8f8
+- catchy slogan instead of "What we do" e.g. "We help kids learn to orienteer!"
+  - then 'our mission is' followed by link to text about what orienteering is
+- field to join mailing list
+- day of week to events
+- new section on benefits of orienteering under upcoming events
+  - free icons from the noun project (icon/noun in each box)
+  - Play Race Explore Team Independence Confidence Decisions/Choices Fun (smiley!)
+  - then text about what orienteering is
+- use Patua One for headers and titly things
+- center text on header
+- Navigation Games in navbar in same font
+- move links rightward (away from "logo")
+
 ​- Render_model can be used to edit lots of fields (duh), so it makes sense to have a double-click to edit on various parts 
-- Lorem ipsum generator
+✔ Lorem ipsum generator @done (16-10-18 22:55)
 - Possible to rename to apps menu in cms_toolbars.py:  get_or_create_menu(ADMIN_MENU_IDENTIFIER, _(‘Apps’))
 - Can have all kinds of relevant links in the menu related to the current page, like an event at a series or location, for example
 - Make sure I’m using select2 (Django-select2) : in admin: form = select2_modelform(model, attrs=[{‘width’: 250}])
