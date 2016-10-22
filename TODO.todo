@@ -2,18 +2,21 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
+- mailchimp integration
+- field to join mailing list
+- logout should redirect to home page
+
 ✔ make image full width, not as high @done (16-10-22 11:32)
 ✔ make Navigation games much bigger @done (16-10-22 11:32)
 ✔ make learn more a bit wider @done (16-10-22 11:37)
 ✔ put get in touch in a box/well w/ background eeeeee or f8f8f8 @done (16-10-22 11:40)
 ✔ catchy slogan instead of "What we do" e.g. "We help kids learn to orienteer!" @done (16-10-22 11:40)
   ✔ then 'our mission is' followed by link to text about what orienteering is @done (16-10-22 11:46)
-- field to join mailing list
 ✔ day of week to events @done (16-10-22 20:28)
-- new section on benefits of orienteering under upcoming events
+✔ new section on benefits of orienteering under upcoming events @done (16-10-22 22:39)
   ✔ free icons from the noun project (icon/noun in each box) @done (16-10-22 11:56)
-  - Play Race Explore Team Independence Confidence Decisions/Choices Fun (smiley!)
-  - then text about what orienteering is
+  ✔ Play Race Explore Team Independence Confidence Decisions/Choices Fun (smiley!) @done (16-10-22 22:39)
+  ✔ then text about what orienteering is @done (16-10-22 22:39)
 ✔ use Patua One for headers and titly things @done (16-10-22 11:46)
 ✔ center text on header @done (16-10-22 11:46)
 ✔ Navigation Games in navbar in same font @done (16-10-22 11:46)
@@ -28,9 +31,9 @@
 - Need a styled banner for page titles, I think,
 - And maybe a more colorful/playful menu
  
-- This is a good blog page; I think: http://www.goodsports.org/news/
+✔ This is a good blog page; I think: http://www.goodsports.org/news/ @done (16-10-22 22:58)
 ✔ full –width header/title? Full-width footer? @done (16-10-22 20:29)
-- Nice menu example from martin: https://www.youtube.com/watch?v=Dj8dhgmzlFM&index=1&list=PLbNxojMo86v42AOM47uhaEFHIJFUM4d6M
+✔ Nice menu example from martin: https://www.youtube.com/watch?v=Dj8dhgmzlFM&index=1&list=PLbNxojMo86v42AOM47uhaEFHIJFUM4d6M @done (16-10-22 22:58)
 ✔ Make navbar better – reveal children on hover, maybe no arrow, place flush over image, have some color @done (16-10-22 20:29)
  
 - generate rss feed? django-cms-feed-generator? or built-in django
@@ -43,12 +46,11 @@
 - test for events
 ✔ make event_list table an include and include in both the app and the plugin templates @done (16-10-17 22:32)
 - refactor/cleanup all template names in events
-- customize newsblog a bit
+✔ customize newsblog a bit @done (16-10-22 22:58)
 - search on blog
 - look at aldryn search and django haystack
 ✔ buttons on front page @done (16-10-17 22:32)
 - series description and pages
-- embed mailchimp mailing list subscribe form?
 ✔ Help page viewable for admins when logged in @done (16-10-22 20:29)
 ✔ link to event site from event name in table @done (16-10-16 23:18)
 ✔ make it so I can use placeholders in the location-list, etc. @done (16-10-16 23:01)

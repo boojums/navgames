@@ -32,8 +32,12 @@
             <div class="col-sm-4 well well-lg">
                 <h2 class="no-top">Get in touch</h2>
                 {% placeholder "contact" or %}
-                    Want to learn more and hear about upcoming events? Connect with us on Facebook, Meetup, or by email.
+                    <h4>Subscribe to our email list:</h4>
                 {% endplaceholder %}
+                <form class="form-inline">
+                        <input name="emailaddress" type="email" placeholder="Enter your email address" required>
+                        <input type="submit" value="Subscribe" class="btn btn-success">
+                </form>                
                 <div>
                 <a href="https://www.facebook.com/NavigationGames/" target="_blank">
                     <i class="icon-2x icon-facebook-sign"></i>
@@ -45,11 +49,7 @@
                     <span class="glyphicon glyphicon-envelope" target="_blank"></span>
                 </a>
                 </div>
-                <div>
-                    <a href="http://eepurl.com/bkggzX" target="_blank">
-                        <button class="btn btn-success">Join our mailing list</button>
-                    </a>
-                </div>
+
             </div>
         </div>
         <hr>
