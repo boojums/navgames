@@ -1,16 +1,45 @@
-<hr>
+{% load sekizai_tags cms_tags %}
+
+{% addtoblock "css" %}
+    <link href="{{ STATIC_URL }}styles/footer.css" rel="stylesheet">
+{% endaddtoblock %}
+
 <div class="footer-basic">
+    <hr>
     <footer>
         <div class="social">
             <a href="#">
-                <i class="icon ion-social-facebook"></i>
+                <i class="fa fa-facebook"></i>
             </a>
-
-        {% if user.is_authenticated %}
-            <p>Logged in as {{ user.username }}. | <a href="/accounts/logout">Logout</a></p>
-        {% else %}
-            <p><a href="/?edit">Login</a></p>
-        {% endif %}
-        <p>© Navigation Games</p>
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </div>
+        <ul class="list-inline">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/">Services</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% page_url 'help_for_editors' %}">Help</a>
+                </li>
+                <li>
+                    <a href="/accounts/logout">Logout</a>
+                </ul>
+            {% else %}
+                <a href="/?edit">Login</a>
+            {% endif %}
+            </li>
+        </ul>
+        <p class="copyright">Navigation Games © 2016</p>
     </footer>
 </div>

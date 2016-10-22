@@ -29,8 +29,8 @@
                 <h2>We teach kids to orienteer!</h2>
                 {% placeholder "left-top-content" %}
             </div>
-            <div class="col-sm-4">
-                <h2>Get in touch</h2>
+            <div class="col-sm-4 well well-lg">
+                <h2 class="no-top">Get in touch</h2>
                 {% placeholder "contact" or %}
                     Want to learn more and hear about upcoming events? Connect with us on Facebook, Meetup, or by email.
                 {% endplaceholder %}
@@ -77,17 +77,17 @@
 
             <div class="col-sm-4 hidden-xs">
                 <a href="{% page_url 'teachers' %}">
-                    <button class="btn btn-primary center-block">   Learn more   </button>
+                    <button class="btn btn-primary btn-lg center-block">Learn more</button>
                 </a>
             </div>
             <div class="col-sm-4 hidden-xs">
                 <a href="{% page_url 'families' %}">
-                    <button class="btn btn-primary center-block">Learn more</button>
+                    <button class="btn btn-primary btn-lg center-block">Learn more</button>
                 </a>
             </div>
             <div class="col-sm-4 hidden-xs">
                 <a href="{% page_url 'help_out' %}">
-                    <button class="btn btn-primary center-block">Learn more</button>
+                    <button class="btn btn-primary btn-lg center-block">Learn more</button>
                 </a>
             </div>
         </div>
@@ -108,25 +108,36 @@
         </div>
 
     <hr>
-
-        <h2>What is orienteering?</h2>
-        <div class="row">
+        <div id="what-orienteering" class="row">
+            <h2>What is orienteering?</h2>
             <div class="col-sm-4">
                 <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-01.png">
                 <h3 class="icon-text">maps</h3>
             </div>
             <div class="col-sm-4">
-                <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-02.png">
-                <h3 class="icon-text">decisions</h3>
+                <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-03.png">
+                <h3 class="icon-text">nature</h3>
             </div>
-
             <div class="col-sm-4">
                 <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-10.png">
                 <h3 class="icon-text">family</h3>
             </div>
 
+            <div class="col-sm-4">
+                <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-02.png">
+                <h3 class="icon-text">decisions</h3>
+            </div>
+            <div class="col-sm-4">
+                <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-17.png">
+                <h3 class="icon-text">activity</h3>
+            </div>
+            <div class="col-sm-4">
+                <img class="center-block" src="{{ STATIC_URL }}/icons/o-icons-04.png">
+                <h3 class="icon-text">fun</h3>
+            </div>
 
         </div>
+        {% placeholder "orienteering-explainer" %}
     </div>
 
 {% endblock content %}

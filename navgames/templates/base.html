@@ -19,6 +19,7 @@
     <body>
         {% cms_toolbar %}
             <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -29,10 +30,11 @@
                     <a class="navbar-brand" href="/">Navigation Games</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav navbar-right">
                         {% show_menu 0 1 100 100 "menu.html" %}
                     </ul>
                 </div>
+            </div>
             </div>
 
             <div>
@@ -45,6 +47,7 @@
             </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}scripts/base.js"></script>
         {% render_block "js" %}
     </body>
 </html>

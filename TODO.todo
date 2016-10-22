@@ -2,23 +2,24 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
-- make image full width, not as high
-- make Navigation games much bigger
-- make learn more a bit wider
-- put get in touch in a box/well w/ background eeeeee or f8f8f8
-- catchy slogan instead of "What we do" e.g. "We help kids learn to orienteer!"
-  - then 'our mission is' followed by link to text about what orienteering is
+✔ make image full width, not as high @done (16-10-22 11:32)
+✔ make Navigation games much bigger @done (16-10-22 11:32)
+✔ make learn more a bit wider @done (16-10-22 11:37)
+✔ put get in touch in a box/well w/ background eeeeee or f8f8f8 @done (16-10-22 11:40)
+✔ catchy slogan instead of "What we do" e.g. "We help kids learn to orienteer!" @done (16-10-22 11:40)
+  ✔ then 'our mission is' followed by link to text about what orienteering is @done (16-10-22 11:46)
 - field to join mailing list
-- day of week to events
+✔ day of week to events @done (16-10-22 20:28)
 - new section on benefits of orienteering under upcoming events
-  - free icons from the noun project (icon/noun in each box)
+  ✔ free icons from the noun project (icon/noun in each box) @done (16-10-22 11:56)
   - Play Race Explore Team Independence Confidence Decisions/Choices Fun (smiley!)
   - then text about what orienteering is
-- use Patua One for headers and titly things
-- center text on header
-- Navigation Games in navbar in same font
-- move links rightward (away from "logo")
+✔ use Patua One for headers and titly things @done (16-10-22 11:46)
+✔ center text on header @done (16-10-22 11:46)
+✔ Navigation Games in navbar in same font @done (16-10-22 11:46)
+✔ move links rightward (away from "logo") @done (16-10-22 11:56)
 
+✔ help for editors link on the bottom instead @done (16-10-22 20:29)
 ​- Render_model can be used to edit lots of fields (duh), so it makes sense to have a double-click to edit on various parts 
 ✔ Lorem ipsum generator @done (16-10-18 22:55)
 - Possible to rename to apps menu in cms_toolbars.py:  get_or_create_menu(ADMIN_MENU_IDENTIFIER, _(‘Apps’))
@@ -28,9 +29,9 @@
 - And maybe a more colorful/playful menu
  
 - This is a good blog page; I think: http://www.goodsports.org/news/
-- full –width header/title? Full-width footer?
+✔ full –width header/title? Full-width footer? @done (16-10-22 20:29)
 - Nice menu example from martin: https://www.youtube.com/watch?v=Dj8dhgmzlFM&index=1&list=PLbNxojMo86v42AOM47uhaEFHIJFUM4d6M
-- Make navbar better – reveal children on hover, maybe no arrow, place flush over image, have some color
+✔ Make navbar better – reveal children on hover, maybe no arrow, place flush over image, have some color @done (16-10-22 20:29)
  
 - generate rss feed? django-cms-feed-generator? or built-in django
 - neoc schedule from rss feed -- adapt django-rss to new migrate system? pull request?
@@ -48,7 +49,7 @@
 ✔ buttons on front page @done (16-10-17 22:32)
 - series description and pages
 - embed mailchimp mailing list subscribe form?
-- Help page viewable for admins when logged in
+✔ Help page viewable for admins when logged in @done (16-10-22 20:29)
 ✔ link to event site from event name in table @done (16-10-16 23:18)
 ✔ make it so I can use placeholders in the location-list, etc. @done (16-10-16 23:01)
 ✔ Basic page templates with breadcrumbs @done (16-10-16 11:08)

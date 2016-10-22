@@ -10,7 +10,7 @@
         </thead>
         <tbody>
         {% for event in event_list %}
-            <tr><td>{{ event.start_date|date }}</td>
+            <tr><td>{{ event.start_date|date:"D d M Y" }}</td>
                 <td><a href="{% url 'events:event-detail' event.slug %}">{{ event.name }}</td>
                 <td><a href="{% url 'events:location-detail' event.location.slug %}">{{ event.location }}</a></td>
                 <td class="hidden-xs">{% if event.uses_epunch %}Yes!
