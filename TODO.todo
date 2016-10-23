@@ -5,6 +5,13 @@
 - mailchimp integration
 - field to join mailing list
 - logout should redirect to home page
+- CMS_TEMPLATE?
+- make events editable from detail page
+- more fields for the events? maybe one placeholder_field thing?
+- set up events application vs plugin templates properly (with includes)
+- http://www.slideshare.net/IacopoSpalletti/django-cms-best-practices
+- add haystack search aldryn search
+- metadata stuff (django-meta)
 
 ✔ make image full width, not as high @done (16-10-22 11:32)
 ✔ make Navigation games much bigger @done (16-10-22 11:32)
@@ -45,10 +52,7 @@
 - fork djangocms-maps, PR for open orienteering map (if api) or something else
 - test for events
 ✔ make event_list table an include and include in both the app and the plugin templates @done (16-10-17 22:32)
-- refactor/cleanup all template names in events
 ✔ customize newsblog a bit @done (16-10-22 22:58)
-- search on blog
-- look at aldryn search and django haystack
 ✔ buttons on front page @done (16-10-17 22:32)
 - series description and pages
 ✔ Help page viewable for admins when logged in @done (16-10-22 20:29)
