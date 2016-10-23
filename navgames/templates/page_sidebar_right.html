@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags staticfiles %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ request.current_page }}</h1>
+        <div class="row">
+            <div class="col-sm-9">
+                {% placeholder "content" %}
+            </div>
+            <div class="col-sm-3 hidden-xs">
+                <div class="well">
+                    I'm in a well!
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

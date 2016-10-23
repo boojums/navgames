@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load cms_tags staticfiles %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>{{ event.name }}</h1>
+        </div>
+        
+        <div class="col-sm-9">
+            <h4>{{ event.location }} - {{ event.start_date|date:"D d M, Y" }}</h4>
+            <hr>
+
+            {{ event.description }}
+            <h2>Location</h2>
+            {% render_placeholder event.location.map_placeholder %}
+        </div>
+
+        <div class="col-sm-3 hidden-xs">
+            <div class="well">
+                <div class="info-box-item">
+                    <img class="center-block img-responsive" src="{{ STATIC_URL }}/icons/question.png">
+                    <a href="{% page_url 'newcomers' %}"><h3 class="text-center">How it works</h3></a>
+                    <p class="text-center">What to expect at an event</p>
+                </div>
+                <div class="info-box-item">                
+                    <img class="center-block img-responsive" src="{{ STATIC_URL }}/images/legend-text.png">
+                    <a href="{{ STATIC_URL }}/images/orienteering-map-legend.jpg" class="text-center"><h3>Map legend</h3></a>
+                    <p class="text-center">Orienteering maps use special symbols to depict forest, fields, trails, boulders, and building.</p>
+                </div>
+
+                <div class="info-box-item">                
+                    <img class="center-block img-responsive" src="{{ STATIC_URL }}/images/e-punch.png">
+                    <a href="{% page_url 'newcomers' %}" class="text-center"><h3>E-punch</h3></a>
+                    <p class="text-center">Each participant uses an electronic finger stick to keep track of the checkpoints they've punched and their time on the course.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    </div>
+{% endblock content %}

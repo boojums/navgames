@@ -11,6 +11,10 @@ body {
     margin-top:0px;
 }
 
+.info-box-item {
+    margin-bottom:45px;
+}
+
 .cms-toolbar-expanded body .navbar-fixed-top {
     top:45px;
 }
