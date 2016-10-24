@@ -5,7 +5,8 @@ from cms.admin.placeholderadmin import FrontendEditableAdminMixin, \
 from .models import Location, Event, Series, UserProfile
 
 
-class EventAdmin(admin.ModelAdmin):
+class EventAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
+    frontend_editable_fields = ("description",)
     prepopulated_fields = {'slug': ('name',)}
 
 

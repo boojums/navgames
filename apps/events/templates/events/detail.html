@@ -7,7 +7,7 @@
 <div class="container">
     <h1>{{ event.name }}</h1>
     <h3>{{ event.location }} - {{ event.start_date|date }}</h3>
-    <p>{{ event.description }}
+    <p>{% render_model event "description" %}</p>
     
     <div class="row">
         <div class="col-md-6">

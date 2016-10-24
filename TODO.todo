@@ -4,7 +4,7 @@
 
 - mailchimp integration
 - field to join mailing list
-- logout should redirect to home page
+✔ logout should redirect to home page @done (16-10-24 21:20)
 - CMS_TEMPLATE?
 - make events editable from detail page
 - more fields for the events? maybe one placeholder_field thing?
@@ -12,6 +12,11 @@
 - http://www.slideshare.net/IacopoSpalletti/django-cms-best-practices
 - add haystack search aldryn search
 - metadata stuff (django-meta)
+- add "edit event" to events menu
+- event "detail.html" shoudl be an include, then the sidebar is the extra part in the project's template
+- directions api...
+- image for event page (plus a placeholder field for more info?)
+- better formatting for event page, inc. blue boxes
 
 ✔ make image full width, not as high @done (16-10-22 11:32)
 ✔ make Navigation games much bigger @done (16-10-22 11:32)
