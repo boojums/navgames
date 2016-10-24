@@ -33,7 +33,7 @@
                     <a href="{% page_url 'help_for_editors' %}">Help</a>
                 </li>
                 <li>
-                    <a href="/accounts/logout">Logout</a>
+                    <a href="{% url 'auth_logout' %}?next=/">Logout</a>
                 </ul>
             {% else %}
                 <a href="/?edit">Login</a>
