@@ -5,3 +5,4 @@ __pycache__
 navgames.sublime-workspace
 *.pyc
 navgames/media/*
+notes.txt
