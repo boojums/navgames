@@ -102,6 +102,11 @@ rideboard
 - rest api for ride info (populate events from the events model)
 - spa with React for ride matching      
  
+Liveresults
+ ☐ use webpack-bundle-tracker + django-webpack-loader and python-react for tighter integration? https://github.com/markfinger/python-react
+ ☐ see: https://github.com/mbrochh/django-react-primer also
+ ☐ and: http://owaislone.org/blog/webpack-plus-reactjs-and-django/
+
 Future
 - use aldryn-boilerplates to have easy different boilerplates for different clubs
 - look up oauth2 setup
