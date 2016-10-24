@@ -187,7 +187,7 @@ PARLER_LANGUESG = {
     }
 }
 
-ALDRYN_BOILERPLATE_NAME = 'legacy'
+# ALDRYN_BOILERPLATE_NAME = 'legacy'
 
 CMS_LANGUAGES = {
     1: [

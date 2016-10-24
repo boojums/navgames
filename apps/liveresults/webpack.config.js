@@ -6,7 +6,7 @@ var APP_DIR = path.resolve(__dirname, 'js');
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 var config = {
-    entry: APP_DIR + "/LiveResults.jsx",
+    entry: APP_DIR + "/app.jsx",
     output: {
         path: BUILD_DIR,
         filename: "bundle.js"
