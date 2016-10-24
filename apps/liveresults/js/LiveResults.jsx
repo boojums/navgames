@@ -15,17 +15,23 @@
 - autorefresh button
 - use ES6 let/const
 - use ES6 arrow functions
+
+- split components into files
+- extend base.html, etc. 
+- include css (bootstrap)
 */
-const Table = ReactBootstrap.Table;
-const ButtonGroup = ReactBootstrap.ButtonGroup;
-const Button = ReactBootstrap.Button;
-const Panel = ReactBootstrap.Panel;
-const Grid = ReactBootstrap.Grid;
-const Row = ReactBootstrap.Row;
-const Col = ReactBootstrap.Col;
-const PageHeader = ReactBootstrap.PageHeader;
-const ButtonToolbar = ReactBootstrap.ButtonToolbar;
-const bootstrapUtils = ReactBootstrap.utils.bootstrapUtils;
+
+import moment from 'moment';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { Table, ButtonGroup, Button } from 'react-bootstrap';
+import { Panel, Grid, Row, Col } from 'react-bootstrap';
+import { PageHeader, ButtonToolbar } from 'react-bootstrap';
+import bootstrapUtils from 'react-bootstrap';
+
+//const bootstrapUtils = ReactBootstrap.utils.bootstrapUtils;
 
 //var results = data.results;
 //var startlist = data.startlist;
@@ -234,7 +240,7 @@ let Event = React.createClass({
       return data.name == this.state.selectedClass;
     }, this).map(function(data) {
       return (
-        <AgeGroup data={data} now={now}></AgeGroup>
+        <AgeGroup data={data} now={now} key={data.name}></AgeGroup>
       );
     });
     
@@ -250,7 +256,7 @@ let Event = React.createClass({
           <ClassButtons data={classList} handleClick={this.handleClassClick}/>
         </Col>
         <Col md={12}>    
-          <div style={{marginTop: '10'}}>
+          <div style={{marginTop: '10px'}}>
             {resultsClasses}
           </div>
         </Col>
@@ -294,13 +300,16 @@ let ClassButtons = React.createClass({
   mapClassNames: function(name) {
     let style = {color: classColors[name]};
     return (
-        <ButtonGroup><Button bsSize="default" 
+        <ButtonGroup key={name}><Button bsSize="sm" 
           onClick={this.handleClassClick} style={style} key={name} id={name}>{name}</Button>            </ButtonGroup>)
   },
   mapGroupNames: function(name) {
       return (
-        <ButtonGroup><Button bsSize="default" 
-          onClick={this.handleGroupClick} key={name} id={name}>{name}</Button>            </ButtonGroup>)
+        <ButtonGroup key={name}>
+          <Button bsSize="sm" 
+            onClick={this.handleGroupClick} key={name} id={name}>{name}
+          </Button>            
+        </ButtonGroup>)
   },  
   selectClassOrder: function() {
     if (this.state.group == "F-classes") return fClassOrder;
@@ -325,7 +334,7 @@ let ClassButtons = React.createClass({
         <ButtonGroup>
           {groupButtons}
         </ButtonGroup>
-       <div style={{marginTop:'10'}}>
+       <div style={{marginTop:'10px'}}>
        <ButtonGroup>
           {displayClasses}
         </ButtonGroup></div>       
@@ -351,6 +360,7 @@ let AgeGroup = React.createClass({
       };
       return ({
         position: person.position,
+        bib: person.bib,
         first: person.first,
         last: person.last,
         club: person.club,
@@ -369,7 +379,8 @@ let AgeGroup = React.createClass({
           style = {color: 'green'};      
         }
       return (
-        <tr style={style}>
+        // TODO: should be person.bib
+        <tr style={style} key={person.bib}>
           <td>{person.position ? person.position : person.status}</td>
           <td>{person.first} {person.last}</td>
           <td>{person.club}</td>

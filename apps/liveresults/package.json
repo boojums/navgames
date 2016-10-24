@@ -1,0 +1,31 @@
+{
+  "name": "liveresults",
+  "version": "1.0.0",
+  "description": "Live Results demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.16.0",
+    "coffee-script": "^1.11.1",
+    "css-loader": "^0.25.0",
+    "jquery": "^3.1.1",
+    "moment": "^2.15.2",
+    "react": "^15.3.2",
+    "react-bootstrap": "^0.30.5",
+    "react-dom": "^15.3.2",
+    "require-cs": "^0.5.4",
+    "requirejs": "^2.3.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.20"
+  }
+}

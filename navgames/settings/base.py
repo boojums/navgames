@@ -136,6 +136,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cms',
     'events',
+    'liveresults',
     'menus',
     'sekizai',
     'treebeard',
