@@ -160,6 +160,7 @@ INSTALLED_APPS = [
     'djangocms_maps',
     'djangocms_inherit',
     'djangocms_link',
+    'rest_framework',
     'reversion',
     'rssplugin',
     'aldryn_reversion',
@@ -272,3 +273,8 @@ MAPS_PROVIDERS = [
 MAPS_GOOGLEMAPS_API_KEY = os.environ.get('GOOGLEMAPS_API_KEY')
 
 MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}

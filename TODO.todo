@@ -2,8 +2,8 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
-- mailchimp integration
-- field to join mailing list
+✔ mailchimp integration @done (16-10-26 11:38)
+✔ field to join mailing list @done (16-10-26 11:38)
 ✔ logout should redirect to home page @done (16-10-24 21:20)
 - CMS_TEMPLATE?
 - make events editable from detail page
@@ -16,13 +16,13 @@
 - add "edit event" to events menu
 - event "detail.html" shoudl be an include, then the sidebar is the extra part in the project's template
 - directions api...
+- argh, https://github.com/aldryn/aldryn-locations instead of maps?
 - image for event page (plus a placeholder field for more info?)
 - better formatting for event page, inc. blue boxes
 
 - testing with travis-ci.org
 - django-debug-toolbar
 - django-extensions
-- argh, https://github.com/aldryn/aldryn-locations instead of maps?
 ✔ make image full width, not as high @done (16-10-22 11:32)
 ✔ make Navigation games much bigger @done (16-10-22 11:32)
 ✔ make learn more a bit wider @done (16-10-22 11:37)
@@ -108,11 +108,17 @@ Event plugins:
 ✔          single event @done (16-10-17 22:32)
 frontend_edit_template?
 
+
 rideboard
 - rest api for ride info (populate events from the events model)
 - spa with React for ride matching      
  
 Liveresults
+ ☐ curl -X POST -H "Content-Type:multipart/form-data" -u {username}:{password} \
+-F "{field_name}=@{filename};type=image/jpeg" http://{your api endpoint}
+ ☐ proper authorization
+ ☐ file upload (need separate fields?)
+
  ☐ use webpack-bundle-tracker + django-webpack-loader and python-react for tighter integration? https://github.com/markfinger/python-react
  ☐ see: https://github.com/mbrochh/django-react-primer also
  ☐ and: http://owaislone.org/blog/webpack-plus-reactjs-and-django/
