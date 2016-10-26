@@ -6,3 +6,4 @@ navgames.sublime-workspace
 *.pyc
 navgames/media/*
 notes.txt
+apps/liveresults/node_modules/

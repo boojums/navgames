@@ -12,12 +12,17 @@
 - http://www.slideshare.net/IacopoSpalletti/django-cms-best-practices
 - add haystack search aldryn search
 - metadata stuff (django-meta)
+- accessibility stuff
 - add "edit event" to events menu
 - event "detail.html" shoudl be an include, then the sidebar is the extra part in the project's template
 - directions api...
 - image for event page (plus a placeholder field for more info?)
 - better formatting for event page, inc. blue boxes
 
+- testing with travis-ci.org
+- django-debug-toolbar
+- django-extensions
+- argh, https://github.com/aldryn/aldryn-locations instead of maps?
 ✔ make image full width, not as high @done (16-10-22 11:32)
 ✔ make Navigation games much bigger @done (16-10-22 11:32)
 ✔ make learn more a bit wider @done (16-10-22 11:37)

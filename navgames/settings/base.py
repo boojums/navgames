@@ -168,6 +168,7 @@ INSTALLED_APPS = [
     'aldryn_translation_tools',
     'parler',
     'sortedm2m',
+    'aldryn_mailchimp',
     'aldryn_faq',
     'taggit',
     'navgames'
@@ -269,3 +270,5 @@ MAPS_PROVIDERS = [
 ]
 
 MAPS_GOOGLEMAPS_API_KEY = os.environ.get('GOOGLEMAPS_API_KEY')
+
+MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')

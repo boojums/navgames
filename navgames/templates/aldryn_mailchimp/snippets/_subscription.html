@@ -1,0 +1,5 @@
+<form class="form-inline" action="{% url 'admin:aldryn-mailchimp-subscribe' %}" method="POST">
+	{% csrf_token %}
+    {{ form }}
+	<button type="submit" class="btn btn-sm btn-success">Subscribe</button>
+</form>
