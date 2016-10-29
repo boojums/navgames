@@ -7,22 +7,24 @@
 
 {% block newsblog_content %}
     <div class="container">
-        <div class="">
-            {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
+        <div class="row">
+            <div class="col-sm-8 col-sm-push-2">
+                {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
 
-            {% static_placeholder "newsblog_social" %}
+                {% static_placeholder "newsblog_social" %}
 
-            <ul class="pager">
-                <li class="previous {% if not prev_article %}disabled{% endif %}">
-                    <a href="{{ prev_article.get_absolute_url }}"><span>&larr; Previous Article</span></a>
-                </li>
-                <li>
-                    <a href="{% namespace_url "article-list" %}">{% trans "Back to Overview" %}</a>
-                </li>
-                <li class="next {% if not next_article %}disabled{% endif %}">
-                    <a href="{{ next_article.get_absolute_url }}"><span>Next Article &rarr;</span></a>
-                </li>
-            </ul>
+                <ul class="pager">
+                    <li class="previous {% if not prev_article %}disabled{% endif %}">
+                        <a href="{{ prev_article.get_absolute_url }}"><span>&larr; Previous Article</span></a>
+                    </li>
+                    <li>
+                        <a href="{% namespace_url "article-list" %}">{% trans "Back to Overview" %}</a>
+                    </li>
+                    <li class="next {% if not next_article %}disabled{% endif %}">
+                        <a href="{{ next_article.get_absolute_url }}"><span>Next Article &rarr;</span></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -11,6 +11,14 @@ body {
     margin-top:0px;
 }
 
+.leftie {
+    float:left;
+}
+
+.rightie {
+    float:right;
+}
+
 .info-box-item {
     margin-bottom:45px;
 }

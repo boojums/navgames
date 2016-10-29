@@ -40,10 +40,6 @@
         <p>{{ article.publishing_date|date }}</p>
     {% endif %}
 
-    {% if detail_view %}
-        {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
-    {% endif %}
-
     {% if article.tags %}
         <p>
             {% for tag in article.tags.all %}
@@ -52,7 +48,7 @@
         </p>
     {% endif %}
 
-    {% render_model article "lead_in" %}
+    {% render_model article "lead_in" "" "" "truncatewords_html:'20'" %}
 
     {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
