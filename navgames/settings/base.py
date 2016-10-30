@@ -210,6 +210,7 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ('page.html', 'Page'),
+    ('page_notitle.html', 'Blank page (no title)'),
     ('front_page.html', 'Front page')
 )
 
