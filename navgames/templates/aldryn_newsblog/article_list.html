@@ -16,7 +16,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 {% for article in article_list %}
-                    {% include "aldryn_newsblog/includes/article.html" %}
+                    <div class="row">
+                        {% include "aldryn_newsblog/includes/article.html" %}
+                    </div>
+                    <hr>
                 {% empty %}
                     <p>{% trans "No items available" %}</p>
                 {% endfor %}

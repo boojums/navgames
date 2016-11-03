@@ -3,12 +3,25 @@ body {
     padding-bottom: 20px;
 }
 
+article h2 {
+    margin-top:0;
+}
+
+h1, h2, .navbar-brand {
+    font-family: 'Patua One', cursive;
+}
+
 .top-buffer { 
     margin-top:20px; 
 }
 
 .no-top {
     margin-top:0px;
+}
+
+.no-right {
+    margin-right:0px;
+    padding-right:0px;
 }
 
 .leftie {
@@ -41,12 +54,4 @@ body {
 .article-title {
     padding:0;
     margin:0; 
-}
-
-article h2 {
-    margin-top:0;
-}
-
-h1, h2, .navbar-brand {
-    font-family: 'Patua One', cursive;
 }

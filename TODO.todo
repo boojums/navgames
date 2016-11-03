@@ -2,7 +2,15 @@
   - how the hell does aldryn-boilterplate work?
   ☐ history for cms pages?
 
+-pull request to remove primary from context choices for Alerts in aldryn-bootstrap3
+
+- more space above headings in Games page
+- more space above People, maybe put them side-by-side
+
 - Contact form instead of mailto! (!!)
+- https://github.com/divio/djangocms-picture
+ -- sends in width and height values in the placeholder!
+- am i using djangocms-cascade?
 ✔ mailchimp integration @done (16-10-26 11:38)
 ✔ field to join mailing list @done (16-10-26 11:38)
 ✔ logout should redirect to home page @done (16-10-24 21:20)

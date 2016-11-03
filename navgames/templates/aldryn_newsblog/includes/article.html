@@ -11,7 +11,9 @@
                 <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
             </p>
         {% else %}
-            <img src="{% thumbnail article.featured_image 200x114 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}" class="article-list-thumbnail">
+            <div class="col-sm-4 col-lg-3">
+                <img class="img-responsive no-right" src="{% thumbnail article.featured_image 200x144 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+            </div>
         {% endif %}
     {% endif %}
 
@@ -24,23 +26,18 @@
         </p>
     {% endif %}
 
-    {% if not detail_view %} 
-        <span class="article-small-date">{{ article.publishing_date|date }}<span>
-    {% endif %}
 
-    <h2>
-        {% if not detail_view %}
-            <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}" class="article-title">{% render_model article "title" %}</a>
-        {% else %}
+    {% if detail_view %}
+        <h2>
             {% render_model article "title" %}
-        {% endif %}
-    </h2>
+        </h2>
+    {% endif %}
 
     {% if detail_view %} 
         <p>{{ article.publishing_date|date }}</p>
     {% endif %}
 
-    {% if article.tags %}
+    {% if article.tags and detail_view %}
         <p>
             {% for tag in article.tags.all %}
                 <a href="{% namespace_url 'article-list-by-tag' tag=tag.slug namespace=namespace default='' %}">{{ tag.name }}</a>
@@ -48,14 +45,20 @@
         </p>
     {% endif %}
 
-    {% render_model article "lead_in" "" "" "truncatewords_html:'20'" %}
-
     {% if detail_view %}
+        {% render_model article "lead_in" "" "" "truncatewords_html:'20'" %}
         {% render_placeholder article.content language placeholder_language %}
     {% else %}
-        <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">
-            <button class="btn btn-success">Read more</button>
-        </a>
-        {% endif %}
+        <div class="col-sm-8 col-lg-9">
+            <span class="article-small-date">{{ article.publishing_date|date }}<span>
+            <h2>
+                <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}" class="article-title">{% render_model article "title" %}</a>
+            </h2>
+            {% render_model article "lead_in" "" "" "truncatewords_html:'20'" %}
+            <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">
+                <button class="btn btn-success">Read more</button>
+            </a>
+        </div>
+    {% endif %}
     <hr>
 </article>
