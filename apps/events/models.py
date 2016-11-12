@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
+import datetime
 
 
 # TODO: flesh out. Street address and/or coordinates?
@@ -95,6 +96,73 @@ class Event(models.Model):
         return descrip
 
 
+class Club(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    short_name = models.CharField(max_length=10, unique=True)
+
+    SCHOOL = 'S'
+    CLUB = 'C'
+    KIND_CHOICES = (
+        (SCHOOL, 'School'),
+        (CLUB, 'Club'),
+    )
+    kind = models.CharField(
+        max_length=1,
+        choices=KIND_CHOICES,
+        default=SCHOOL)
+
+    def __str__(self):
+        return self.name
+
+
+class Course(models.Model):
+    event = models.ForeignKey(Event)
+    name = models.CharField(max_length=20, null=True, blank=True)
+    short_name = models.CharField(max_length=10)
+    length = models.FloatField(null=True, blank=True)
+
+    TIME = 'T'
+    SCORE = 'S'
+    BOTH = 'B'
+    KIND_CHOICES = (
+        (TIME, 'Time'),
+        (SCORE, 'Score'),
+        (BOTH, 'Both'),
+    )
+    kind = models.CharField(
+        max_length=1,
+        choices=KIND_CHOICES,
+        default=TIME)
+
+    def __str__(self):
+        return '{}: {}'.format(self.event, self.name)
+
+
+class Result(models.Model):
+    course = models.ForeignKey(Course, null=True, blank=True)
+    team_name = models.CharField(max_length=100)
+    club = models.ForeignKey(Club, null=True, blank=True)
+    points = models.IntegerField(null=True, blank=True)
+    time = models.IntegerField(null=True, blank=True)
+    status = models.CharField(max_length=20, default="OK")
+    place = models.IntegerField()
+
+
+    # TODO: template tag for this?
+    def get_time(self):
+        '''Returns the elapsed time as formatted string.'''
+        hours = self.time // 3600
+        seconds = self.time - hours
+        minutes = seconds // 60
+        seconds = seconds - (minutes * 60)
+        if hours > 0:
+            time = '{}:'.format(hours)
+        else:
+            time = ''
+        time += "{:0>2}:{:0>2}".format(minutes, seconds)
+        return time
+
+
 class EventPluginModel(CMSPlugin):
     event = models.ForeignKey(Event)
 
@@ -121,20 +189,9 @@ class EventListPluginModel(CMSPlugin):
 
 # TODO: I don't think these belongs here --
 # not sure, part of a registration app?
-class Club(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    short_name = models.CharField(max_length=10, unique=True)
-
-
-class School(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    short_name = models.CharField(max_length=10, unique=True)
-
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     club = models.ForeignKey(Club, null=True, blank=True)
-    school = models.ForeignKey(School, null=True, blank=True)
     picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __str__(self):

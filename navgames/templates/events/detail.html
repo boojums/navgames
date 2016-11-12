@@ -37,7 +37,37 @@
                     {% render_placeholder event.location.map_placeholder %}
                 </div>
             </div>
+
+            <!-- results -->            
+            <h2>Results</h2>
+            <div clas="row">            
+                {% if event.future %}
+                    You'll be able to view results here after the event.
+                {% else %}
+                    {% for course in event.course_set.all %}
+                        <h3>{{ course.name }}</h3>
+                        <table class="table table-responsive table-striped">
+                            <thead>
+                                <th>Place</th>
+                                <th>Name</th>
+                                <th>Club</th>
+                                <th>Points</th>
+                                <th>Time</th>
+                            </thead>
+                            {% for result in course.result_set.all %}
+                                <tr><td>{{ result.place }}</td>
+                                    <td>{{ result.team_name }}</td>
+                                    <td>{% if result.club %} {{ result.club }}{% endif %}</td>
+                                    <td>{% if result.points %} {{ result.points }}{% endif %}</td>
+                                    <td>{% if result.time %} {{ result.get_time }}{% endif %}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% endfor %}
+                {% endif %}
+            </div>
         </div>
+
 
         <!-- sidebar -->
         <div class="col-sm-3 hidden-xs">
