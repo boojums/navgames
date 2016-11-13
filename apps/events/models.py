@@ -139,28 +139,33 @@ class Course(models.Model):
 
 
 class Result(models.Model):
+    '''Single result, with time represented AP-style (hhmmss).'''
     course = models.ForeignKey(Course, null=True, blank=True)
     team_name = models.CharField(max_length=100)
     club = models.ForeignKey(Club, null=True, blank=True)
     points = models.IntegerField(null=True, blank=True)
-    time = models.IntegerField(null=True, blank=True)
+    time = models.CharField(max_length=6, null=True, blank=True)
+    time_seconds = models.IntegerField(null=True, blank=True)
     status = models.CharField(max_length=20, default="OK")
     place = models.IntegerField()
 
-
-    # TODO: template tag for this?
     def get_time(self):
         '''Returns the elapsed time as formatted string.'''
-        hours = self.time // 3600
-        seconds = self.time - hours
-        minutes = seconds // 60
-        seconds = seconds - (minutes * 60)
-        if hours > 0:
-            time = '{}:'.format(hours)
+        if len(self.time) % 2:
+            time = '0' + self.time
+            odd = True
         else:
-            time = ''
-        time += "{:0>2}:{:0>2}".format(minutes, seconds)
+            time = self.time
+            odd = False
+
+        time = ':'.join(time[i:i+2] for i in range(0, len(time), 2))
+        if odd:
+            time = time[1:]
         return time
+
+    #def save(self):
+        ''' Convert time (AP-style) to seconds for time_seconds.'''
+    #    pass
 
 
 class EventPluginModel(CMSPlugin):
@@ -187,8 +192,6 @@ class EventListPluginModel(CMSPlugin):
         return descrip + str(self.num_events) + ' events.'
 
 
-# TODO: I don't think these belongs here --
-# not sure, part of a registration app?
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     club = models.ForeignKey(Club, null=True, blank=True)

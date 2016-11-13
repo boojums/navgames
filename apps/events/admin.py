@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.forms import BaseInlineFormSet
 from cms.admin.placeholderadmin import FrontendEditableAdminMixin, \
                                        PlaceholderAdminMixin
 
