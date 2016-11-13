@@ -140,14 +140,28 @@ class Course(models.Model):
 
 class Result(models.Model):
     '''Single result, with time represented AP-style (hhmmss).'''
+    place = models.IntegerField(null=True, blank=True)
     course = models.ForeignKey(Course, null=True, blank=True)
     team_name = models.CharField(max_length=100)
     club = models.ForeignKey(Club, null=True, blank=True)
     points = models.IntegerField(null=True, blank=True)
     time = models.CharField(max_length=6, null=True, blank=True)
     time_seconds = models.IntegerField(null=True, blank=True)
-    status = models.CharField(max_length=20, default="OK")
-    place = models.IntegerField()
+
+    OK = 'OK'
+    DNF = 'DNF'
+    DNS = 'DNS'
+    MSP = 'MSP'
+    STATUS_CHOICES = (
+        (OK, 'OK'),
+        (DNF, 'DNF'),
+        (DNS, 'DNS'),
+        (MSP, 'MSP'),
+    )
+    status = models.CharField(
+        max_length=5,
+        choices=STATUS_CHOICES,
+        default=OK)
 
     def get_time(self):
         '''Returns the elapsed time as formatted string.'''

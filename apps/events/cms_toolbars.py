@@ -2,7 +2,7 @@ from django.utils.translation import ugettext_lazy as _
 from cms.toolbar_pool import toolbar_pool
 from cms.toolbar_base import CMSToolbar
 from cms.utils.urlutils import admin_reverse
-from events.models import Event, Location, Series
+from events.models import Event
 
 
 @toolbar_pool.register

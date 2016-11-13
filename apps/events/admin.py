@@ -25,6 +25,7 @@ class LocationAdmin(FrontendEditableAdminMixin, PlaceholderAdminMixin,
 
 class ResultInline(admin.TabularInline):
     model = Result
+    exclude = ['time_seconds', ]
 
 
 class CourseAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
