@@ -4,8 +4,14 @@
 
 -pull request to remove primary from context choices for Alerts in aldryn-bootstrap3
 
-- more space above headings in Games page
+- Handle points vs time in detail.html
+- save time as seconds
+- add editing of results to frontend and/or cms toolbar
+✔ more space above headings in Games page @done (16-11-16 22:38)
 - more space above People, maybe put them side-by-side
+
+- Logo on navbar
+- tabs on the events detail page?
 
 - Contact form instead of mailto! (!!)
 - https://github.com/divio/djangocms-picture

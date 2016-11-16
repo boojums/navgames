@@ -1,3 +1,6 @@
+from itertools import chain
+from operator import attrgetter
+
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
@@ -27,8 +30,13 @@ class EventList(generic.ListView):
 
     def get_queryset(self):
         ''' Return all upcoming events '''
-        return Event.objects.filter(start_date__gte=timezone.now()) \
-                            .order_by('start_date')
+        future_events = Event.future_events.all().order_by('start_date')
+        if len(future_events) < 5:
+            past_events = Event.past_events.all().order_by('-start_date')[:4]
+        events = sorted(
+            chain(future_events, past_events),
+            key=attrgetter('start_date'))
+        return events
 
 
 class EventCreate(CreateView):

@@ -36,6 +36,5 @@ class CourseAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
 admin.site.register(Location)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Series)
-admin.site.register(Result)
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Club)

@@ -2,7 +2,6 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from .models import EventPluginModel, EventListPluginModel, Event
 from django.utils.translation import ugettext as _
-from django.utils import timezone
 
 
 @plugin_pool.register_plugin
@@ -38,7 +37,10 @@ class EventListPluginPublisher(CMSPluginBase):
         if instance.series:
             events = events.filter(series=instance.series)
 
-        event_list = events.order_by('start_date')[:instance.num_events]
+        if instance.past_events:
+            event_list = events.order_by('-start_date')[:instance.num_events]
+        else:
+            event_list = events.order_by('start_date')[:instance.num_events]
         context.update({'instance': instance,
                         'event_list': event_list})
         return context
