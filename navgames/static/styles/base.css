@@ -19,6 +19,14 @@ h1, h2, .navbar-brand {
     margin-top:0px;
 }
 
+.bottom-buffer {
+    margin-bottom:30px;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .no-right {
     margin-right:0px;
     padding-right:0px;
