@@ -1,4 +1,17 @@
 TODO:
+ front page:
+   ☐ make opening paragraph less wide
+   ☐ email field taller (like button) and longer
+   ☐ email as help text
+   ☐ space above buttons
+   ☐ move We teach kids to orienteer type text to splash area
+   ☐ move events up to top
+   ☐ make all welcome much bigger
+   ☐ header for cirlces "more information for..." or something
+   ✔ what is orienteering centered @done (17-01-06 23:44)
+ Local clubs page:
+  ☐ take away logos
+
 ✔ make accounts for Ethan and Keegan @done (16-11-21 22:53)
 - simple pre-registration system
 - login with single-sign-on

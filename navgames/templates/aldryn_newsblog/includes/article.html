@@ -4,7 +4,6 @@
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
 
-    {# The image is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.featured_image_id %}
         {% if detail_view %}
             <p>
@@ -17,6 +16,7 @@
         {% endif %}
     {% endif %}
 
+    {# The category is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.categories.exists and detail_view %}
         <p>
             {% for category in article.categories.all %}
@@ -26,16 +26,13 @@
         </p>
     {% endif %}
 
-
-    {% if detail_view %}
-        <h2>
-            {% render_model article "title" %}
-        </h2>
-    {% endif %}
-
     {% if detail_view %} 
-        <p>{{ article.publishing_date|date }}</p>
-    {% endif %}
+        <span class="article-small-date">
+            {{ article.publishing_date|date }} - {{ article.author }}
+        </span>
+        <h2> {% render_model article "title" %} </h2>
+
+   {% endif %}
 
     {% if article.tags and detail_view %}
         <p>
@@ -50,7 +47,9 @@
         {% render_placeholder article.content language placeholder_language %}
     {% else %}
         <div class="col-sm-8 col-lg-9">
-            <span class="article-small-date">{{ article.publishing_date|date }}<span>
+            <span class="article-small-date">
+                {{ article.publishing_date|date }} - {{ article.author }}
+            </span>
             <h2>
                 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}" class="article-title">{% render_model article "title" %}</a>
             </h2>
