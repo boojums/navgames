@@ -96,6 +96,7 @@ TEMPLATES = [
                 'django.core.context_processors.static',
                 'cms.context_processors.cms_settings',
                 'aldryn_boilerplates.context_processors.boilerplate',
+                'navgames.context_processors.google_analytics'
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
@@ -274,6 +275,9 @@ MAPS_PROVIDERS = [
 MAPS_GOOGLEMAPS_API_KEY = os.environ.get('GOOGLEMAPS_API_KEY')
 
 MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
+
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-87368514-1'
+GOOGLE_ANALYTICS_DOMAIN = 'navigationgames.org'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
