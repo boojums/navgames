@@ -136,8 +136,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'cms',
-    'events',
     'liveresults',
+    'events',
     'menus',
     'sekizai',
     'treebeard',
@@ -173,7 +173,8 @@ INSTALLED_APPS = [
     'aldryn_mailchimp',
     'aldryn_faq',
     'taggit',
-    'navgames'
+    'navgames',
+    'django_extensions'
 ]
 
 LANGUAGES = (

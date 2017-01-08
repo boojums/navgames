@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
-import datetime
 
 
 # TODO: flesh out. Street address and/or coordinates?
@@ -64,7 +63,7 @@ class Event(models.Model):
     uses_epunch = models.BooleanField()
     series = models.ForeignKey(Series, null=True, blank=True)
     public = models.BooleanField()
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
 
     objects = models.Manager()
     past_events = PastEvents()
@@ -83,10 +82,13 @@ class Event(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             if not self.name:
-                slugname = self.location.name + ' ' + str(self.start_date.year)
+                slugname = self.location.name + \
+                           ' ' + self.start_date.strftime("%Y-%m-%d")
                 self.slug = slugify(slugname)
             else:
-                self.slug = slugify(self.name)
+                slugname = self.name + ' ' + \
+                           self.start_date.strftime("%Y-%m-%d")
+                self.slug = slugify(slugname)
         super(Event, self).save(*args, **kwargs)
 
     def __str__(self):

@@ -5,7 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.utils import timezone
 from cms.utils.urlutils import admin_reverse
 
 from .models import Event, Location

@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.forms import BaseInlineFormSet
 from cms.admin.placeholderadmin import FrontendEditableAdminMixin, \
                                        PlaceholderAdminMixin
 
@@ -12,7 +11,6 @@ class CourseInline(admin.TabularInline):
 
 class EventAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
     frontend_editable_fields = ("description",)
-    prepopulated_fields = {'slug': ('name',)}
     inlines = [
         CourseInline,
     ]
