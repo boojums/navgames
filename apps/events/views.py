@@ -37,7 +37,7 @@ class EventList(generic.ListView):
                 chain(future_events, past_events),
                 key=attrgetter('start_date'))
         else:
-            events = past_events
+            events = future_events
         return events
 
 
