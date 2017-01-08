@@ -81,11 +81,12 @@ class Event(models.Model):
         return self.start_date < now
 
     def save(self, *args, **kwargs):
-        if not self.name:
-            slugname = self.location.name + ' ' + str(self.start_date.year)
-            self.slug = slugify(slugname)
-        else:
-            self.slug = slugify(self.name)
+        if not self.slug:
+            if not self.name:
+                slugname = self.location.name + ' ' + str(self.start_date.year)
+                self.slug = slugify(slugname)
+            else:
+                self.slug = slugify(self.name)
         super(Event, self).save(*args, **kwargs)
 
     def __str__(self):
