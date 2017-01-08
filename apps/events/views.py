@@ -33,9 +33,11 @@ class EventList(generic.ListView):
         future_events = Event.future_events.all().order_by('start_date')
         if len(future_events) < 5:
             past_events = Event.past_events.all().order_by('-start_date')[:4]
-        events = sorted(
-            chain(future_events, past_events),
-            key=attrgetter('start_date'))
+            events = sorted(
+                chain(future_events, past_events),
+                key=attrgetter('start_date'))
+        else:
+            events = past_events
         return events
 
 
