@@ -6,8 +6,10 @@ from django.views import generic
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from cms.utils.urlutils import admin_reverse
+from rest_framework import viewsets, permissions
 
 from .models import Event, Location
+from .serializers import EventSerializer
 
 
 class LocationList(generic.ListView):
@@ -77,3 +79,9 @@ class EventDetail(generic.DetailView):
     # def get_queryset(self):
     #     self.event = get_object_or_404(Event, slug=self.kwargs['slug'])
     #     return self.event
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.future_events.all().order_by('start_date')
+    serializer_class = EventSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
