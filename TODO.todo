@@ -1,4 +1,8 @@
 TODO:
+ ☐ link to rss feed
+ ☐ ical export
+ ☐ link to ical export
+ ☐ rest api access
  ☐ disentangle liveresults from navigation games
  ☐ setup proof-of-concept with templates
  

@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .feeds import LatestEventsFeed
+from .feeds import LatestEventsFeed, EventsICal
 
 from . import views
 
@@ -17,5 +17,6 @@ urlpatterns = [
         name='location-detail'),
     url(r'location/list/', views.LocationList.as_view(), name='location-list'),
 
-    url(r'feed/$', LatestEventsFeed())
+    url(r'feed/$', LatestEventsFeed()),
+    url(r'ical/$', EventsICal())
 ]

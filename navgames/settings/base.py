@@ -162,6 +162,7 @@ INSTALLED_APPS = [
     'djangocms_inherit',
     'djangocms_link',
     'rest_framework',
+    'django_ical',
     'reversion',
     'rssplugin',
     'aldryn_reversion',
