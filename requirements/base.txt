@@ -21,6 +21,8 @@ djangocms-inherit==0.2.2
 djangocms-link==2.0.1
 djangocms-maps==0.7.0
 djangocms-text-ckeditor==3.3.0
+djangorestframework==3.5.1
+django-ical==1.4
 easy-thumbnails==2.3
 html5lib==0.9999999
 pytz==2016.7
