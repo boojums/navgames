@@ -23,5 +23,5 @@ urlpatterns = [
 
     url(r'feed/$', LatestEventsFeed()),
     url(r'ical/$', EventsICal()),
-    url(r'api/', include(router.urls))
+    #url(r'api/', include(router.urls))
 ]
