@@ -165,6 +165,7 @@ INSTALLED_APPS = [
     'django_ical',
     'reversion',
     'rssplugin',
+    'cmsplugin_iframe',
     'aldryn_reversion',
     'adminsortable2',
     'aldryn_boilerplates',
