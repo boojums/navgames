@@ -1,8 +1,8 @@
 TODO:
  ☐ link to rss feed
- ☐ ical export
+ ✔ ical export @done (17-01-25 12:58)
  ☐ link to ical export
- ☐ rest api access
+ ✔ rest api access @done (17-01-25 12:58)
  ☐ disentangle liveresults from navigation games
  ☐ setup proof-of-concept with templates
  
@@ -14,10 +14,10 @@ Event api:
    ☐ email field taller (like button) and longer
    ☐ email as help text
    ☐ space above buttons
-   ☐ move We teach kids to orienteer type text to splash area
-   ☐ move events up to top
+   ✔ move We teach kids to orienteer type text to splash area @done (17-07-15 12:24)
+   ✔ move events up to top @done (17-07-15 12:24)  
    ☐ make all welcome much bigger
-   ☐ header for cirlces "more information for..." or something
+   ✔ header for cirlces "more information for..." or something @done (17-07-15 12:18)
    ✔ what is orienteering centered @done (17-01-06 23:44)
  Local clubs page:
   ☐ take away logos

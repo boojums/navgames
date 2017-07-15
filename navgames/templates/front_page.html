@@ -16,7 +16,7 @@
                     <div class="site-heading">
                         <h1>Navigation Games</h1>
                         <hr class="small">
-                        <span class="subheading">Our mission is to teach Cambridge-area children how to read maps, navigate, make decisions, work as a team, and act independently, all through the sport of orienteering.</span>
+                        <span class="subheading">We teach kids to orienteer!</span>                    
                     </div>
                 </div>
             </div>
@@ -26,9 +26,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <h2>We teach kids to orienteer!</h2>
-                {% placeholder "left-top-content" %}
+                {% placeholder "events-header" or %}
+                    <h2>Upcoming Events!</h2>
+                {% endplaceholder %}
+                {% placeholder "events-list" %}            
             </div>
+
             <div class="col-sm-4 well well-lg">
                 <h2 class="no-top">Get in touch</h2>
                 {% placeholder "contact" or %}
@@ -50,10 +53,24 @@
             </div>
         </div>
         <hr>
+         <div class="row">
+            <div class="col-sm-4">
+                {% placeholder "events-explainer" %}
+            </div>
+            <div class="col-sm-8">
+                <h2>We teach kids to orienteer!</h2>
+                {% placeholder "left-top-content" %}
+            </div>
+        </div>
+
     </div>
+    <hr>
 
     <div class="container">
         <div class="row">
+            <div class="col-sm-6 col-sm-offset-4 col-md-8 col-md-offset-4">
+                <h2>More information for...</h2>
+            </div>
             <div class="col-sm-4">
                     <a href="{% page_url 'teachers' %}">
                         <img class="img-circle img-responsive center-block" 
@@ -91,19 +108,6 @@
     </div>
 
     <div class="container">
-    <hr>
-        <div class="row">
-            <div class="col-sm-8">
-                {% placeholder "events-header" or %}
-                    <h2>Upcoming Events!</h2>
-                {% endplaceholder %}
-                {% placeholder "events-list" %}            
-            </div>
-            <div class="col-sm-4">
-                {% placeholder "events-explainer" %}
-            </div>
-        </div>
-
     <hr>
         <div id="what-orienteering" class="row">
             <h2 class="center-text bottom-buffer">What is orienteering?</h2>
