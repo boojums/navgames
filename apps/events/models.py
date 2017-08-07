@@ -64,6 +64,7 @@ class Event(models.Model):
     series = models.ForeignKey(Series, null=True, blank=True)
     public = models.BooleanField()
     slug = models.SlugField(unique=True, blank=True)
+    image = models.ImageField(upload_to='event_images', null=True, blank=True)
 
     objects = models.Manager()
     past_events = PastEvents()

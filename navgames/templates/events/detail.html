@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load cms_tags staticfiles %}
+{% load cms_tags staticfiles thumbnail %}
 
 {% block title %}{% endblock %}
 
@@ -21,9 +21,12 @@
                 </div>
             {% endif %}
             
+            <img src="{% thumbnail event.image 600x300 crop subject_location=event.image.subject_location %}" 
+                 alt="{{ event.image.alt }}"> 
+            
             <p>Start: {{ event.start_date|date:"g:iA" }}</p>
             {% render_model event "description" %}
-            
+
             {% if event.uses_epunch %}
                 <div><br /><p><strong>This event uses e-punch</strong></p></div>
             {% endif %}
