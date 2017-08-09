@@ -5,6 +5,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.navigationgames.org']
 
+SECURE_SSL_REDIRECT = True
+
 STATIC_ROOT = "/home/boojum/navgames-static/"
 
 DATABASES = {
