@@ -271,6 +271,11 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.background'
 )
 
+# Overrides for the text-ckeditor
+TEXT_ADDITIONAL_TAGS = ('iframe',)
+TEXT_ADDITIONAL_ATTRIBUTES = ('scrolling', 'allowfullscreen', 'frameborder',
+                              'src', 'height', 'width')
+
 # djangcms-maps settings
 MAPS_PROVIDERS = [
     ('googlemaps', gettext('Google Maps (API key required)')),
