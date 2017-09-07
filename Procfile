@@ -1,0 +1,1 @@
+web: gunicorn navgames.wsgi --log-file -

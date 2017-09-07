@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 """
 Django settings for navgames project.
@@ -36,7 +37,7 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +45,9 @@ ALLOWED_HOSTS = []
 ROOT_URLCONF = 'navgames.urls'
 
 WSGI_APPLICATION = 'navgames.wsgi.application'
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Database
@@ -70,7 +74,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = "/var/www/navgames.org/static"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = "/var/www/navgames.org/static"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -165,7 +170,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_ical',
     'reversion',
-    'rssplugin',
+    #'rssplugin',
     'cmsplugin_iframe',
     'aldryn_reversion',
     'adminsortable2',
@@ -249,16 +254,27 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/login/'
 
 DATABASES = {
+    # 'default': {
+    #     'CONN_MAX_AGE': 0,
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'HOST': 'localhost',
+    #     'NAME': 'project.db',
+    #     'PASSWORD': '',
+    #     'PORT': '',
+    #     'USER': ''
+    # }
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': '',
+        'POST': '',
     }
 }
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 MIGRATION_MODULES = {
 }
@@ -292,3 +308,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
