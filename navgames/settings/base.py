@@ -126,8 +126,6 @@ MIDDLEWARE_CLASSES = [
 ]
 
 INSTALLED_APPS = [
-    'djangocms_admin_style',
-    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -137,6 +135,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'cms',
+    'djangocms_admin_style',
+    'registration',
     'liveresults',
     'events',
     'menus',
@@ -165,7 +165,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_ical',
     'reversion',
-    'rssplugin',
+    # #'rssplugin',
     'cmsplugin_iframe',
     'aldryn_reversion',
     'adminsortable2',
@@ -249,14 +249,22 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/login/'
 
 DATABASES = {
+    # 'default': {
+    #     'CONN_MAX_AGE': 0,
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'HOST': 'localhost',
+    #     'NAME': 'project.local.db',
+    #     'PASSWORD': '',
+    #     'PORT': '',
+    #     'USER': ''
+    # }
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
