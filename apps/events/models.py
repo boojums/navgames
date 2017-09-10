@@ -65,6 +65,7 @@ class Event(models.Model):
     public = models.BooleanField()
     slug = models.SlugField(unique=True, blank=True)
     image = models.ImageField(upload_to='event_images', null=True, blank=True)
+    customURL = models.URLField(null=True, blank=True)
 
     objects = models.Manager()
     past_events = PastEvents()
