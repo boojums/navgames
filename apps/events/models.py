@@ -5,7 +5,6 @@ from django.utils import timezone
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
 
-
 # TODO: flesh out. Street address and/or coordinates?
 class Location(models.Model):
     ''' A location for an event.'''
@@ -183,7 +182,7 @@ class Result(models.Model):
         return time
 
     #def save(self):
-        ''' Convert time (AP-style) to seconds for time_seconds.'''
+        #''' Convert time (AP-style) to seconds for time_seconds.'''
     #    pass
 
 

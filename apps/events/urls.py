@@ -1,6 +1,7 @@
+''' URLS for the events app. '''
 from django.conf.urls import url, include
-from .feeds import LatestEventsFeed, EventsICal
 from rest_framework import routers
+from .feeds import LatestEventsFeed, EventsICal
 
 from . import views
 
