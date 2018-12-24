@@ -1,5 +1,3 @@
-import os
-
 """
 Django settings for navgames project.
 
@@ -20,6 +18,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'navgames.settings.production'
 
 Also set API keys as environ variables.
 """
+import os
 
 
 def gettext(s):
@@ -139,6 +138,7 @@ INSTALLED_APPS = [
     'registration',
     'liveresults',
     'events',
+    'activities',
     'menus',
     'sekizai',
     'treebeard',
@@ -292,3 +292,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+
+TAGGIT_CASE_INSENSITIVE = True

@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% load cms_tags %} {% block content %}
+<div class="container">
+    <h2>Events</h2>
+    {% static_placeholder 'activitieslist-intro' %} {% include 'activities/includes/activities_table.html' %} {% static_placeholder 'activitieslist-detail' %}
+</div>
+{% endblock content %}

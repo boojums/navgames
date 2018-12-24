@@ -1,0 +1,25 @@
+{% if activity_list %}
+<div class=>
+    <table class="table table-responsive table-striped">
+        <thead>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th class="hidden-xs"></th>
+            <th class="hidden-xs"></th>
+        </thead>
+        <tbody>
+            {% for activity in activity_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'activities:activity-detail' activity.slug %}">
+                    {{ activity.name }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p> There aren't any activities.</p>
+{% endif %}
