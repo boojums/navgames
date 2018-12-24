@@ -5,6 +5,10 @@ from taggit.managers import TaggableManager
 
 class Activity(models.Model):
     ''' A single activity that could be part of a lesson. '''
+
+    class Meta:
+        verbose_name_plural = "activities"
+    
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     description = models.TextField()
@@ -19,6 +23,7 @@ class Activity(models.Model):
     execution = models.TextField(blank=True)
     variations = models.TextField(blank=True)
     reflection = models.TextField(blank=True)
+
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)

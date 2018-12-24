@@ -2,6 +2,32 @@
 <div class="container">
     <h1>{{ activity.name }}</h1>
     <h3>{{ activity.description }}</h3>
+    <h5>Tags: </h5>
+    <p>{{ activity.tags.all|join:", "}}</p>
+
+
+    <h2>Objectives</h2>
+    <p>{{ activity.objectives}} </p>
+
+    <h2>Time Required</h2>
+    <p>{{ activity.time_required}} </p>
+
+    <h2>Materials</h2>
+    <p>{{ activity.materials}} </p>
+
+    <h2>Prep</h2>
+    <p>{{ activity.prep}} </p>
+
+    <h2>Execution</h2>
+    <p>{{ activity.execution}} </p>
+
+    <h2>Variations</h2>
+    <p>{{ activity.variations}} </p>
+
+    <h2>Reflection</h2>
+    <p>{{ activity.reflection | safe | linebreaks}} </p>
+
+
     <!-- <p>{% render_model event "description" %}</p> -->
 
 </div>
