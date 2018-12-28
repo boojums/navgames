@@ -1,19 +1,34 @@
 {% extends 'base.html' %} {% load cms_tags %} {% block title %}{% endblock %} {% block content %}
 <div class="container">
     <h1>{{ activity.name }}</h1>
-    <h3>{{ activity.description }}</h3>
-    <h5>Tags: </h5>
-    <p>{{ activity.tags.all|join:", "}}</p>
+    <p>{{ activity.description }}</p>
+    <b>Tags: </b> {{ activity.tags.all|join:", "}}
 
+    <br />
+    <br />
 
-    <h2>Objectives</h2>
-    <p>{{ activity.objectives}} </p>
+    <table class="table table-striped table-bordered">
+        <tbody>
+            <tr>
+                <th scope="row ">Objectives</th>
+                <td>{{ activity.objectives }}</td>
+            </tr>
+            <tr>
+                <th scope="row ">Standards</th>
+                <td>{{ activity.standards}}</td>
+            </tr>
 
-    <h2>Time Required</h2>
-    <p>{{ activity.time_required}} </p>
+            <tr>
+                <th scope="row ">Time Required</th>
+                <td>{{ activity.time_required}}</td>
+            </tr>
+            <tr>
+                <th scope="row ">Materials</th>
+                <td>{{ activity.materials}}</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <h2>Materials</h2>
-    <p>{{ activity.materials}} </p>
 
     <h2>Prep</h2>
     <p>{{ activity.prep}} </p>
@@ -28,7 +43,7 @@
     <p>{{ activity.reflection | safe | linebreaks}} </p>
 
 
-    <!-- <p>{% render_model event "description" %}</p> -->
+    <!-- <p>{% render_model event "description " %}</p> -->
 
 </div>
 {% endblock content %}

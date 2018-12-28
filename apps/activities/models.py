@@ -1,7 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from taggit.managers import TaggableManager
-
+from djangocms_text_ckeditor.fields import HTMLField
 
 class Activity(models.Model):
     ''' A single activity that could be part of a lesson. '''
@@ -20,9 +20,9 @@ class Activity(models.Model):
     
     prep = models.TextField(blank=True)
     intro = models.TextField(blank=True)
-    execution = models.TextField(blank=True)
-    variations = models.TextField(blank=True)
-    reflection = models.TextField(blank=True)
+    execution = HTMLField(blank=True)
+    variations = HTMLField(blank=True)
+    reflection = HTMLField(blank=True)
 
 
     def save(self, *args, **kwargs):
